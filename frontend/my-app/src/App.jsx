@@ -5,6 +5,7 @@ import InterviewPrepPage from './pages/InterviewPrepPage';
 import PracticePage from './pages/PracticePage';
 import QuickTips from './pages/QuickTips';
 import Navbar from "./components/Navbar.jsx";
+import TutorialsPage from "./pages/TutorialsPage.jsx";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
             <Route path="/interview" element={<InterviewPrepPage />} />
             <Route path="/practice" element={<PracticePage />} />
             <Route path="/tips" element={<QuickTips />} />
+            <Route path="/tutorials" element={<TutorialsPage />} />
         </Routes>
     );
 };

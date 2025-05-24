@@ -4,6 +4,7 @@ import AboutPage from './pages/AboutPage';
 import InterviewPrepPage from './pages/InterviewPrepPage';
 import PracticePage from './pages/PracticePage';
 import QuickTips from './pages/QuickTips';
+import Navbar from "./components/Navbar.jsx";
 
 const AppRoutes = () => {
     return (
@@ -21,6 +22,7 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <>
+        <Navbar />
         <AppRoutes />
     </>
   );

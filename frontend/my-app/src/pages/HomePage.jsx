@@ -1,11 +1,15 @@
-
+import Hero from '../components/Hero';
+import Navbar from '../components/Navbar';
 
 const HomePage = () => {
     return (
         <div>
+            <header>
+                <Navbar />
+            </header>
             <main>
                 <section>
-                    <h1>Hi from the home page</h1>
+                    <Hero />
                 </section>
             </main>
         </div>

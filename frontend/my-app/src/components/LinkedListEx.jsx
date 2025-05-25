@@ -11,6 +11,9 @@ function shuffle(array) {
 }
 
 const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showCorrect, setShowCorrect, selected, setSelected, handleDragStart, handleDragOver, handleDrop, handleDragEnd, isCorrect }) => {
+    // Get the original correct order from the data source
+    const correctOrder = title.includes("Pseudocode") ? SinglyLLInsertAtFront : SinglyLLInsertAFrontCode;
+    
     return (
         <div className="mb-4">
             <h1 className="text-base font-bold mb-1">{title}</h1>
@@ -37,7 +40,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
             ) : showCorrect ? (
                 <>
                     <ul className="space-y-0.5">
-                        {lines.map((line, idx) => (
+                        {correctOrder.map((line, idx) => (
                             <li
                                 key={idx}
                                 className="p-1.5 my-0.5 bg-green-100 border border-green-300 rounded font-mono text-sm"

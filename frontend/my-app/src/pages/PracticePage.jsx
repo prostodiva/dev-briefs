@@ -1,11 +1,68 @@
-import LinkedListEx from "../components/LinkedListEx"
+import { useState } from "react";
+import LinkedListEx from "../components/LinkedListEx";
+import Navbar from "../components/Navbar.jsx";
+
+const PracticeCard = ({ title, onSelect }) => {
+    return (
+        <div 
+            className="bg-blue-300 h-40 rounded-2xl flex flex-col items-center justify-center transform cursor-pointer hover:bg-blue-400"
+            onClick={onSelect}
+        >
+            <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
+        </div>
+    );
+};
+
+const exercises = [
+    {
+        title: "Singly Linked List",
+        category: "Linked List"
+    },
+    {
+        title: "Doubly Linked List",
+        category: "Linked List"
+    }
+]
 
 const PracticePage = () => {
+    const [showExercise, setShowExercise] = useState(false);
+
+    if (showExercise) {
+        return (
+            <div className="mt-5">
+                <button 
+                    className="mb-4 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+                    onClick={() => setShowExercise(false)}
+                >
+                    ← Back to Exercises
+                </button>
+                <LinkedListEx />
+            </div>
+        );
+    }
+
     return (
-        <section>
-            <h1 className="text-blue-950 font-bold p-8 text-4xl">Singly Linked List</h1>
-            <LinkedListEx />
-        </section>
+        <div className="w-full px-4 py-30 pb-32 mt-32">
+            <div>
+                <Navbar />
+            </div>
+            <h2 className="text-black text-4xl font-bold mb-8 text-center">Linked List</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mx-auto">
+                {exercises
+                    .filter(exercise => exercise.category === "Linked List")
+                    .map((exercise, idx) => (
+                        <PracticeCard 
+                            key={idx} 
+                            title={exercise.title}
+                            onSelect={() => {
+                                if (exercise.title === "Singly Linked List") {
+                                    setShowExercise(true);
+                                }
+                            }}
+                        />
+                    ))}
+            </div>
+        </div>
     );
 };
 

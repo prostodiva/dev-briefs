@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import {navLinks} from "../data/index.js";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { navLinks } from "../data/index.js";
 
 const Navbar = () => {
     const [active, setActive] = useState("home");

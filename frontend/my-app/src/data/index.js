@@ -25,7 +25,7 @@ export const navLinks = [
     }
 ];
 
-export const SinglyLinkedListEx = [
+export const SinglyLLInsertAtFront = [
     "create struct Node: data, next, constructor(assign data with value, next to nullptr)",
     "InsertNodeAtFront:",
     "      - create a newNode",
@@ -38,6 +38,36 @@ export const SinglyLinkedListEx = [
     "      - update a nullptr when we reached the end of the list(move to the next node)",
     "Main:",
     "      - create an empty list",
-    "test the function in main:",
+    "test the functions:",
     "      - add values, print result"
+];
+
+export const SinglyLLInsertAFrontCode = [
+    "#include <string>",
+    "#include <iostream>",
+    "using namespace std;",
+    "struct Node {",
+    "  int data;",
+    "  Node* next;",
+    "  Node(int value) : data(value), next(nullptr) {};",
+    "};",
+    "void InsertNodeAtFront(Node*& head, int value) {",
+    "  Node* newNode = new Node(value);",
+    "  newNode->next = head;",
+    "  head = newNode;",
+    "}",
+    "void PrintListForward(Node*& head) {",
+    " Node* temp = head;",
+    " while (temp != nullptr) {",
+    "   cout <<temp->data << \" -> \";",
+    "   temp = temp->next;",
+    " }",
+    " cout << \"nullptr\"<<endl;",
+    "}",
+    "int main() {",
+    "  Node* singlyLL = nullptr;",
+    "  InsertNodeAtFront(singlyLL, 1);",
+    "  PrintListForward(singlyLL);",
+    "  return 0;",
+    "}"
 ];

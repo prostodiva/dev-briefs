@@ -1,7 +1,11 @@
+import Navbar from "../components/Navbar.jsx";
+
 const QuickTipsPage = () => {
     return (
         <section>
-            <h1>Quick Tips</h1>
+            <div>
+                <Navbar />
+            </div>
         </section>
     );
 };

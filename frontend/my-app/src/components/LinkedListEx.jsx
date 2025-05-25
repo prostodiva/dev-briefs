@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SinglyLinkedListEx } from "../data/index.js";
+import { SinglyLLInsertAFrontCode, SinglyLLInsertAtFront } from "../data/index.js";
 
 function shuffle(array) {
     const arr = [...array];
@@ -10,85 +10,44 @@ function shuffle(array) {
     return arr;
 }
 
-const LinkedListEx = () => {
-    const [lines, setLines] = useState(SinglyLinkedListEx);
-    const [selected, setSelected] = useState(null);
-    const [shuffled, setShuffled] = useState(false);
-    const [showCorrect, setShowCorrect] = useState(false);
-
-    // Enhanced drag and drop handlers
-    const handleDragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setSelected(index);
-    };
-
-    const handleDragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handleDrop = (e, index) => {
-        e.preventDefault();
-        if (selected === null) return;
-        
-        const newLines = [...lines];
-        const [moved] = newLines.splice(selected, 1);
-        newLines.splice(index, 0, moved);
-        setLines(newLines);
-        setSelected(null);
-    };
-
-    const handleDragEnd = () => {
-        setSelected(null);
-    };
-
-    // Shuffle handler
-    const handleShuffle = () => {
-        setLines(shuffle(SinglyLinkedListEx));
-        setShuffled(true);
-    };
-
-    // Check if the order is correct
-    const isCorrect = JSON.stringify(lines) === JSON.stringify(SinglyLinkedListEx);
-
+const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showCorrect, setShowCorrect, selected, setSelected, handleDragStart, handleDragOver, handleDrop, handleDragEnd, isCorrect }) => {
     return (
-        <div className="max-w-4xl mx-auto mt-16 p-6 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10">
-            <h1 className="text-lg font-bold mb-4">Singly Linked List practice exercise</h1>
-            <h2 className="text-lg font-bold mb-4">Create and Display Singly Linked. Insert Nodes At Front.</h2>
-            <h2 className="text-lg font-bold mb-4">Part 1: Arrange the pseudocode in the correct order:</h2>
+        <div className="mb-4">
+            <h1 className="text-base font-bold mb-1">{title}</h1>
+            <h2 className="text-sm font-light mb-2">{description}</h2>
             {!shuffled ? (
                 <>
-                    <ul className="space-y-2">
-                        {SinglyLinkedListEx.map((line, idx) => (
+                    <ul className="space-y-0.5">
+                        {lines.map((line, idx) => (
                             <li
                                 key={idx}
-                                className="p-4 bg-gray-100 border border-gray-300 rounded font-mono"
+                                className="p-1.5 bg-gray-100 border border-gray-300 rounded font-mono text-sm"
                             >
                                 {line}
                             </li>
                         ))}
                     </ul>
                     <button
-                        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                        onClick={handleShuffle}
+                        className="mt-1 px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+                        onClick={onShuffle}
                     >
                         Shuffle
                     </button>
                 </>
             ) : showCorrect ? (
                 <>
-                    <ul>
-                        {SinglyLinkedListEx.map((line, idx) => (
+                    <ul className="space-y-0.5">
+                        {lines.map((line, idx) => (
                             <li
                                 key={idx}
-                                className="p-2 my-1 bg-green-100 border border-green-300 rounded font-mono"
+                                className="p-1.5 my-0.5 bg-green-100 border border-green-300 rounded font-mono text-sm"
                             >
                                 {line}
                             </li>
                         ))}
                     </ul>
                     <button
-                        className="mt-4 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
+                        className="mt-1 px-2 py-1 bg-gray-600 text-white rounded hover:bg-gray-700 text-sm"
                         onClick={() => setShowCorrect(false)}
                     >
                         Back to Exercise
@@ -96,7 +55,7 @@ const LinkedListEx = () => {
                 </>
             ) : (
                 <>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1">
                         {lines.map((line, idx) => (
                             <li
                                 key={idx}
@@ -105,32 +64,156 @@ const LinkedListEx = () => {
                                 onDragOver={(e) => handleDragOver(e, idx)}
                                 onDrop={(e) => handleDrop(e, idx)}
                                 onDragEnd={handleDragEnd}
-                                className={`p-4 border rounded font-mono cursor-move transition-all duration-200 hover:shadow-md ${
+                                className={`p-1.5 border rounded font-mono cursor-move transition-all duration-200 hover:shadow-md text-sm ${
                                     selected === idx 
                                         ? 'bg-blue-100 border-blue-300 shadow-lg scale-[1.02]' 
                                         : 'bg-gray-100 border-gray-300 hover:bg-gray-50'
                                 }`}
                             >
                                 <div className="flex items-center">
-                                    <span className="mr-2 text-gray-500">⋮⋮</span>
+                                    <span className="mr-1 text-gray-500 text-xs">⋮⋮</span>
                                     {line}
                                 </div>
                             </li>
                         ))}
                     </ul>
-                    <div className="flex gap-4 mt-4">
+                    <div className="flex gap-2 mt-1 items-center">
                         <button
-                            className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+                            className="px-2 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm"
                             onClick={() => setShowCorrect(true)}
                         >
                             Show Correct Order
                         </button>
                         {isCorrect && (
-                            <div className="text-green-600 font-semibold self-center">Correct!</div>
+                            <>
+                                <div className="text-green-600 font-semibold text-sm">Correct!</div>
+                                <button
+                                    className="px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+                                    onClick={onShuffle}
+                                >
+                                    Shuffle
+                                </button>
+                            </>
                         )}
                     </div>
                 </>
             )}
+        </div>
+    );
+};
+
+const LinkedListEx = () => {
+    // State for pseudocode exercise
+    const [pseudoLines, setPseudoLines] = useState(SinglyLLInsertAtFront);
+    const [pseudoSelected, setPseudoSelected] = useState(null);
+    const [pseudoShuffled, setPseudoShuffled] = useState(false);
+    const [pseudoShowCorrect, setPseudoShowCorrect] = useState(false);
+
+    // State for code exercise
+    const [codeLines, setCodeLines] = useState(SinglyLLInsertAFrontCode);
+    const [codeSelected, setCodeSelected] = useState(null);
+    const [codeShuffled, setCodeShuffled] = useState(false);
+    const [codeShowCorrect, setCodeShowCorrect] = useState(false);
+
+    // Enhanced drag and drop handlers for pseudocode
+    const handlePseudoDragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setPseudoSelected(index);
+    };
+
+    const handlePseudoDragOver = (e, index) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handlePseudoDrop = (e, index) => {
+        e.preventDefault();
+        if (pseudoSelected === null) return;
+        
+        const newLines = [...pseudoLines];
+        const [moved] = newLines.splice(pseudoSelected, 1);
+        newLines.splice(index, 0, moved);
+        setPseudoLines(newLines);
+        setPseudoSelected(null);
+    };
+
+    const handlePseudoDragEnd = () => {
+        setPseudoSelected(null);
+    };
+
+    // Enhanced drag and drop handlers for code
+    const handleCodeDragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setCodeSelected(index);
+    };
+
+    const handleCodeDragOver = (e, index) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handleCodeDrop = (e, index) => {
+        e.preventDefault();
+        if (codeSelected === null) return;
+        
+        const newLines = [...codeLines];
+        const [moved] = newLines.splice(codeSelected, 1);
+        newLines.splice(index, 0, moved);
+        setCodeLines(newLines);
+        setCodeSelected(null);
+    };
+
+    const handleCodeDragEnd = () => {
+        setCodeSelected(null);
+    };
+
+    // Check if the order is correct for both exercises
+    const isPseudoCorrect = JSON.stringify(pseudoLines) === JSON.stringify(SinglyLLInsertAtFront);
+    const isCodeCorrect = JSON.stringify(codeLines) === JSON.stringify(SinglyLLInsertAFrontCode);
+
+    return (
+        <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10">
+            <ExerciseSection
+                title="Singly Linked List Pseudocode Exercise"
+                description="Create and Display Singly Linked List. Insert Nodes At Front."
+                lines={pseudoLines}
+                onShuffle={() => {
+                    setPseudoLines(shuffle(SinglyLLInsertAtFront));
+                    setPseudoShuffled(true);
+                }}
+                shuffled={pseudoShuffled}
+                showCorrect={pseudoShowCorrect}
+                setShowCorrect={setPseudoShowCorrect}
+                selected={pseudoSelected}
+                setSelected={setPseudoSelected}
+                handleDragStart={handlePseudoDragStart}
+                handleDragOver={handlePseudoDragOver}
+                handleDrop={handlePseudoDrop}
+                handleDragEnd={handlePseudoDragEnd}
+                isCorrect={isPseudoCorrect}
+            />
+
+            <div className="border-t border-gray-200 my-2"></div>
+
+            <ExerciseSection
+                title="Singly Linked List Code Exercise"
+                description="Arrange the C++ implementation in the correct order"
+                lines={codeLines}
+                onShuffle={() => {
+                    setCodeLines(shuffle(SinglyLLInsertAFrontCode));
+                    setCodeShuffled(true);
+                }}
+                shuffled={codeShuffled}
+                showCorrect={codeShowCorrect}
+                setShowCorrect={setCodeShowCorrect}
+                selected={codeSelected}
+                setSelected={setCodeSelected}
+                handleDragStart={handleCodeDragStart}
+                handleDragOver={handleCodeDragOver}
+                handleDrop={handleCodeDrop}
+                handleDragEnd={handleCodeDragEnd}
+                isCorrect={isCodeCorrect}
+            />
         </div>
     );
 };

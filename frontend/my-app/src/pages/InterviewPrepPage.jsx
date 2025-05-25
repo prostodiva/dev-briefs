@@ -1,7 +1,11 @@
+import Navbar from "../components/Navbar.jsx";
+
 const InterviewPrepPage = () => {
     return (
         <section>
-            <h1>Interview Prep Page</h1>
+            <div>
+                <Navbar />
+            </div>
         </section>
     );
 };

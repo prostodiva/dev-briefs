@@ -8,7 +8,7 @@ const PracticeCard = ({ title, onSelect }) => {
             className="bg-blue-300 h-40 rounded-2xl flex flex-col items-center justify-center transform cursor-pointer hover:bg-blue-400"
             onClick={onSelect}
         >
-            <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
+            <h3 className="text-white text-xl font-bold mb-2 font-inter">{title}</h3>
         </div>
     );
 };
@@ -47,7 +47,7 @@ const PracticePage = () => {
                 <Navbar />
             </div>
             <h2 className="text-black text-4xl font-bold mb-8 text-center">Linked List</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl mx-auto">
                 {exercises
                     .filter(exercise => exercise.category === "Linked List")
                     .map((exercise, idx) => (

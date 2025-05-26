@@ -5,6 +5,7 @@ import InterviewPrepPage from './pages/InterviewPrepPage';
 import PracticePage from './pages/PracticePage';
 import QuickTips from './pages/QuickTips';
 import TutorialsPage from "./pages/TutorialsPage.jsx";
+import SubscribePage from "./pages/SubscribePage.jsx";
 
 const AppRoutes = () => {
     return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
             <Route path="/practice" element={<PracticePage />} />
             <Route path="/quick_tips" element={<QuickTips />} />
             <Route path="/tutorials" element={<TutorialsPage />} />
+            <Route path="/subscribe" element={<SubscribePage />} />
         </Routes>
     );
 };

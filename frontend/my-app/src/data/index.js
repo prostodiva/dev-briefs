@@ -22,6 +22,10 @@ export const navLinks = [
     {
         id: "practice",
         title: "Practice"
+    },
+    {
+        id: "subscribe",
+        title: "Subscribe"
     }
 ];
 

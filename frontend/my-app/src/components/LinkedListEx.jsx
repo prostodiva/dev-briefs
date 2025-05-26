@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { SinglyLLInsertAFrontCode, SinglyLLInsertAtFront } from "../data/index.js";
+import {
+    SinglyLLInsertAtEnd,
+    SinglyLLInsertAtEndCode,
+    SinglyLLInsertAtFront,
+    SinglyLLInsertAtFrontCode, SinglyLLInsertAtIndex, SinglyLLInsertAtIndexCode
+} from "../data/index.js";
 
 function shuffle(array) {
     const arr = [...array];
@@ -10,9 +15,77 @@ function shuffle(array) {
     return arr;
 }
 
+const exercises = [
+    {
+        id: 1,
+        title: "InsertAtFront/Display Pseudocode Exercise",
+        description: "Create and Display Singly Linked List. Insert Nodes At Front.",
+        type: "pseudocode",
+        data: SinglyLLInsertAtFront
+    },
+    {
+        id: 2,
+        title: "InsertAtFront/Display Code Exercise",
+        description: "Create and Display Singly Linked List. Insert Nodes At Front.",
+        type: "code",
+        data: SinglyLLInsertAtFrontCode
+    },
+    {
+        id: 3,
+        title: "InsertAtEnd/Reverse Pseudocode Exercise",
+        description: "Insert Node At End of Linked List and display in reverse order",
+        type: "pseudocode",
+        data: SinglyLLInsertAtEnd
+    },
+    {
+        id: 4,
+        title: "InsertAtEnd/Reverse Code Exercise",
+        description: "Insert Node At End of Linked List and display in reverse order",
+        type: "code",
+        data: SinglyLLInsertAtEndCode
+    },
+    {
+        id: 5,
+        title: "InsertAtIndex Function Pseudocode Exercise",
+        description: "Create a Function to insert node at Nth index",
+        type: "pseudocode",
+        data: SinglyLLInsertAtIndex
+    },
+    {
+        id: 6,
+        title: "InsertAtIndex Code Exercise",
+        description: "Using a template create: InsertAtFront/InsertAtIndex/Print Code Exercise",
+        type: "code",
+        data: SinglyLLInsertAtIndexCode
+    }
+
+];
+
+const ExerciseNavigation = ({ exercises, activeExercise, onExerciseSelect }) => {
+    return (
+        <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
+            {exercises.map((exercise) => (
+                <button
+                    key={exercise.id}
+                    onClick={() => onExerciseSelect(exercise.id)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                        activeExercise === exercise.id
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                >
+                    {exercise.title}
+                </button>
+            ))}
+        </div>
+    );
+};
+
 const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showCorrect, setShowCorrect, selected, setSelected, handleDragStart, handleDragOver, handleDrop, handleDragEnd, isCorrect }) => {
     // Get the original correct order from the data source
-    const correctOrder = title.includes("Pseudocode") ? SinglyLLInsertAtFront : SinglyLLInsertAFrontCode;
+    const correctOrder = title.includes("Pseudocode") 
+        ? (title.includes("End") ? SinglyLLInsertAtEnd : SinglyLLInsertAtFront)
+        : (title.includes("Index") ? SinglyLLInsertAtIndexCode : SinglyLLInsertAtFrontCode);
     
     return (
         <div className="mb-4">
@@ -106,17 +179,43 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
 };
 
 const LinkedListEx = () => {
-    // State for pseudocode exercise
+    const [activeExercise, setActiveExercise] = useState(1);
+
+    // State for first pseudocode exercise
     const [pseudoLines, setPseudoLines] = useState(SinglyLLInsertAtFront);
     const [pseudoSelected, setPseudoSelected] = useState(null);
     const [pseudoShuffled, setPseudoShuffled] = useState(false);
     const [pseudoShowCorrect, setPseudoShowCorrect] = useState(false);
 
-    // State for code exercise
-    const [codeLines, setCodeLines] = useState(SinglyLLInsertAFrontCode);
+    // State for first code exercise
+    const [codeLines, setCodeLines] = useState(SinglyLLInsertAtFrontCode);
     const [codeSelected, setCodeSelected] = useState(null);
     const [codeShuffled, setCodeShuffled] = useState(false);
     const [codeShowCorrect, setCodeShowCorrect] = useState(false);
+
+    // State for second pseudocode exercise
+    const [pseudo2Lines, setPseudo2Lines] = useState(SinglyLLInsertAtEnd);
+    const [pseudo2Selected, setPseudo2Selected] = useState(null);
+    const [pseudo2Shuffled, setPseudo2Shuffled] = useState(false);
+    const [pseudo2ShowCorrect, setPseudo2ShowCorrect] = useState(false);
+
+    // State for second code exercise
+    const [code2Lines, setCode2Lines] = useState(SinglyLLInsertAtEndCode);
+    const [code2Selected, setCode2Selected] = useState(null);
+    const [code2Shuffled, setCode2Shuffled] = useState(false);
+    const [code2ShowCorrect, setCode2ShowCorrect] = useState(false);
+
+    // State for InsertAtIndex pseudocode exercise
+    const [pseudo3Lines, setPseudo3Lines] = useState(SinglyLLInsertAtIndex);
+    const [pseudo3Selected, setPseudo3Selected] = useState(null);
+    const [pseudo3Shuffled, setPseudo3Shuffled] = useState(false);
+    const [pseudo3ShowCorrect, setPseudo3ShowCorrect] = useState(false);
+
+    // State for InsertAtIndex code exercise
+    const [code3Lines, setCode3Lines] = useState(SinglyLLInsertAtIndexCode);
+    const [code3Selected, setCode3Selected] = useState(null);
+    const [code3Shuffled, setCode3Shuffled] = useState(false);
+    const [code3ShowCorrect, setCode3ShowCorrect] = useState(false);
 
     // Enhanced drag and drop handlers for pseudocode
     const handlePseudoDragStart = (e, index) => {
@@ -170,53 +269,253 @@ const LinkedListEx = () => {
         setCodeSelected(null);
     };
 
-    // Check if the order is correct for both exercises
+    // Enhanced drag and drop handlers for second pseudocode
+    const handlePseudo2DragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setPseudo2Selected(index);
+    };
+
+    const handlePseudo2DragOver = (e, index) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handlePseudo2Drop = (e, index) => {
+        e.preventDefault();
+        if (pseudo2Selected === null) return;
+        
+        const newLines = [...pseudo2Lines];
+        const [moved] = newLines.splice(pseudo2Selected, 1);
+        newLines.splice(index, 0, moved);
+        setPseudo2Lines(newLines);
+        setPseudo2Selected(null);
+    };
+
+    const handlePseudo2DragEnd = () => {
+        setPseudo2Selected(null);
+    };
+
+    // Enhanced drag and drop handlers for second code exercise
+    const handleCode2DragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setCode2Selected(index);
+    };
+
+    const handleCode2DragOver = (e, index) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handleCode2Drop = (e, index) => {
+        e.preventDefault();
+        if (code2Selected === null) return;
+        
+        const newLines = [...code2Lines];
+        const [moved] = newLines.splice(code2Selected, 1);
+        newLines.splice(index, 0, moved);
+        setCode2Lines(newLines);
+        setCode2Selected(null);
+    };
+
+    const handleCode2DragEnd = () => {
+        setCode2Selected(null);
+    };
+
+    // Enhanced drag and drop handlers for InsertAtIndex exercise
+    const handlePseudo3DragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setPseudo3Selected(index);
+    };
+
+    const handlePseudo3DragOver = (e, index) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handlePseudo3Drop = (e, index) => {
+        e.preventDefault();
+        if (pseudo3Selected === null) return;
+        
+        const newLines = [...pseudo3Lines];
+        const [moved] = newLines.splice(pseudo3Selected, 1);
+        newLines.splice(index, 0, moved);
+        setPseudo3Lines(newLines);
+        setPseudo3Selected(null);
+    };
+
+    const handlePseudo3DragEnd = () => {
+        setPseudo3Selected(null);
+    };
+
+    // Enhanced drag and drop handlers for InsertAtIndex code exercise
+    const handleCode3DragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setCode3Selected(index);
+    };
+
+    const handleCode3DragOver = (e, index) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handleCode3Drop = (e, index) => {
+        e.preventDefault();
+        if (code3Selected === null) return;
+        
+        const newLines = [...code3Lines];
+        const [moved] = newLines.splice(code3Selected, 1);
+        newLines.splice(index, 0, moved);
+        setCode3Lines(newLines);
+        setCode3Selected(null);
+    };
+
+    const handleCode3DragEnd = () => {
+        setCode3Selected(null);
+    };
+
+    // Check if the order is correct for all exercises
     const isPseudoCorrect = JSON.stringify(pseudoLines) === JSON.stringify(SinglyLLInsertAtFront);
-    const isCodeCorrect = JSON.stringify(codeLines) === JSON.stringify(SinglyLLInsertAFrontCode);
+    const isCodeCorrect = JSON.stringify(codeLines) === JSON.stringify(SinglyLLInsertAtFrontCode);
+    const isPseudo2Correct = JSON.stringify(pseudo2Lines) === JSON.stringify(SinglyLLInsertAtEnd);
+    const isCode2Correct = JSON.stringify(code2Lines) === JSON.stringify(SinglyLLInsertAtEndCode);
+    const isPseudo3Correct = JSON.stringify(pseudo3Lines) === JSON.stringify(SinglyLLInsertAtIndex);
+    const isCode3Correct = JSON.stringify(code3Lines) === JSON.stringify(SinglyLLInsertAtIndexCode);
+
+    const currentExercise = exercises.find(ex => ex.id === activeExercise);
 
     return (
         <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10">
-            <ExerciseSection
-                title="Singly Linked List Pseudocode Exercise"
-                description="Create and Display Singly Linked List. Insert Nodes At Front."
-                lines={pseudoLines}
-                onShuffle={() => {
-                    setPseudoLines(shuffle(SinglyLLInsertAtFront));
-                    setPseudoShuffled(true);
-                }}
-                shuffled={pseudoShuffled}
-                showCorrect={pseudoShowCorrect}
-                setShowCorrect={setPseudoShowCorrect}
-                selected={pseudoSelected}
-                setSelected={setPseudoSelected}
-                handleDragStart={handlePseudoDragStart}
-                handleDragOver={handlePseudoDragOver}
-                handleDrop={handlePseudoDrop}
-                handleDragEnd={handlePseudoDragEnd}
-                isCorrect={isPseudoCorrect}
+            <ExerciseNavigation 
+                exercises={exercises}
+                activeExercise={activeExercise}
+                onExerciseSelect={setActiveExercise}
             />
-
-            <div className="border-t border-gray-200 my-2"></div>
-
-            <ExerciseSection
-                title="Singly Linked List Code Exercise"
-                description="Arrange the C++ implementation in the correct order"
-                lines={codeLines}
-                onShuffle={() => {
-                    setCodeLines(shuffle(SinglyLLInsertAFrontCode));
-                    setCodeShuffled(true);
-                }}
-                shuffled={codeShuffled}
-                showCorrect={codeShowCorrect}
-                setShowCorrect={setCodeShowCorrect}
-                selected={codeSelected}
-                setSelected={setCodeSelected}
-                handleDragStart={handleCodeDragStart}
-                handleDragOver={handleCodeDragOver}
-                handleDrop={handleCodeDrop}
-                handleDragEnd={handleCodeDragEnd}
-                isCorrect={isCodeCorrect}
-            />
+            
+            {currentExercise.type === "pseudocode" ? (
+                currentExercise.id === 1 ? (
+                    <ExerciseSection
+                        title={currentExercise.title}
+                        description={currentExercise.description}
+                        lines={pseudoLines}
+                        onShuffle={() => {
+                            setPseudoLines(shuffle(SinglyLLInsertAtFront));
+                            setPseudoShuffled(true);
+                        }}
+                        shuffled={pseudoShuffled}
+                        showCorrect={pseudoShowCorrect}
+                        setShowCorrect={setPseudoShowCorrect}
+                        selected={pseudoSelected}
+                        setSelected={setPseudoSelected}
+                        handleDragStart={handlePseudoDragStart}
+                        handleDragOver={handlePseudoDragOver}
+                        handleDrop={handlePseudoDrop}
+                        handleDragEnd={handlePseudoDragEnd}
+                        isCorrect={isPseudoCorrect}
+                    />
+                ) : currentExercise.id === 3 ? (
+                    <ExerciseSection
+                        title={currentExercise.title}
+                        description={currentExercise.description}
+                        lines={pseudo2Lines}
+                        onShuffle={() => {
+                            setPseudo2Lines(shuffle(SinglyLLInsertAtEnd));
+                            setPseudo2Shuffled(true);
+                        }}
+                        shuffled={pseudo2Shuffled}
+                        showCorrect={pseudo2ShowCorrect}
+                        setShowCorrect={setPseudo2ShowCorrect}
+                        selected={pseudo2Selected}
+                        setSelected={setPseudo2Selected}
+                        handleDragStart={handlePseudo2DragStart}
+                        handleDragOver={handlePseudo2DragOver}
+                        handleDrop={handlePseudo2Drop}
+                        handleDragEnd={handlePseudo2DragEnd}
+                        isCorrect={isPseudo2Correct}
+                    />
+                ) : (
+                    <ExerciseSection
+                        title={currentExercise.title}
+                        description={currentExercise.description}
+                        lines={pseudo3Lines}
+                        onShuffle={() => {
+                            setPseudo3Lines(shuffle(SinglyLLInsertAtIndex));
+                            setPseudo3Shuffled(true);
+                        }}
+                        shuffled={pseudo3Shuffled}
+                        showCorrect={pseudo3ShowCorrect}
+                        setShowCorrect={setPseudo3ShowCorrect}
+                        selected={pseudo3Selected}
+                        setSelected={setPseudo3Selected}
+                        handleDragStart={handlePseudo3DragStart}
+                        handleDragOver={handlePseudo3DragOver}
+                        handleDrop={handlePseudo3Drop}
+                        handleDragEnd={handlePseudo3DragEnd}
+                        isCorrect={isPseudo3Correct}
+                    />
+                )
+            ) : (
+                currentExercise.id === 2 ? (
+                    <ExerciseSection
+                        title={currentExercise.title}
+                        description={currentExercise.description}
+                        lines={codeLines}
+                        onShuffle={() => {
+                            setCodeLines(shuffle(SinglyLLInsertAtFrontCode));
+                            setCodeShuffled(true);
+                        }}
+                        shuffled={codeShuffled}
+                        showCorrect={codeShowCorrect}
+                        setShowCorrect={setCodeShowCorrect}
+                        selected={codeSelected}
+                        setSelected={setCodeSelected}
+                        handleDragStart={handleCodeDragStart}
+                        handleDragOver={handleCodeDragOver}
+                        handleDrop={handleCodeDrop}
+                        handleDragEnd={handleCodeDragEnd}
+                        isCorrect={isCodeCorrect}
+                    />
+                ) : currentExercise.id === 4 ? (
+                    <ExerciseSection
+                        title={currentExercise.title}
+                        description={currentExercise.description}
+                        lines={code2Lines}
+                        onShuffle={() => {
+                            setCode2Lines(shuffle(SinglyLLInsertAtEndCode));
+                            setCode2Shuffled(true);
+                        }}
+                        shuffled={code2Shuffled}
+                        showCorrect={code2ShowCorrect}
+                        setShowCorrect={setCode2ShowCorrect}
+                        selected={code2Selected}
+                        setSelected={setCode2Selected}
+                        handleDragStart={handleCode2DragStart}
+                        handleDragOver={handleCode2DragOver}
+                        handleDrop={handleCode2Drop}
+                        handleDragEnd={handleCode2DragEnd}
+                        isCorrect={isCode2Correct}
+                    />
+                ) : (
+                    <ExerciseSection
+                        title={currentExercise.title}
+                        description={currentExercise.description}
+                        lines={code3Lines}
+                        onShuffle={() => {
+                            setCode3Lines(shuffle(SinglyLLInsertAtIndexCode));
+                            setCode3Shuffled(true);
+                        }}
+                        shuffled={code3Shuffled}
+                        showCorrect={code3ShowCorrect}
+                        setShowCorrect={setCode3ShowCorrect}
+                        selected={code3Selected}
+                        setSelected={setCode3Selected}
+                        handleDragStart={handleCode3DragStart}
+                        handleDragOver={handleCode3DragOver}
+                        handleDrop={handleCode3Drop}
+                        handleDragEnd={handleCode3DragEnd}
+                        isCorrect={isCode3Correct}
+                    />
+                )
+            )}
         </div>
     );
 };

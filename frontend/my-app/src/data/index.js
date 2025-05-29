@@ -24,6 +24,10 @@ export const navLinks = [
         title: "Practice"
     },
     {
+        id: "Quizzes",
+        title: "Quizzes"
+    },
+    {
         id: "subscribe",
         title: "Subscribe"
     }
@@ -92,19 +96,21 @@ export const SinglyLLInsertAtEnd = [
     "      - traverse the list untill temp hit nullptr",
     "      - print the values",
     "      - update a nullptr when we reached the end of the list(move to the next node)",
-    "ReverseList(Given the head of a list, reverse the list and return the head of reversed list):",
-    "      - create a temp pointer to traverse the list from head",
-    "      - create and initialize prev pointer to nullptr",
-    "      - initialize next pointer to nullptr",
-    "      - traverse through the nodes until we hit nullptr",
-    "      - store next",
-    "      - Reverse current node's next pointer",
-    "      - Move pointers one position ahead",
-    "      - Return the head of reversed linked list",
+    "ReverseList:",
+   "       - create a temp pointer",
+   "       - assign the pointer with the same address as a head",
+   "       - create prev and next pointers, assign with nullptr",
+   "       - traverse the list while temp != nullptr",
+   "       - assign next with pointer of temp",
+   "       - assign prev with pointer of temp",
+   "       - make prev a new head(point to nullptr)",
+   "       - traverse the list again(opposite direction) until tem != nullptr",
+   "       - print the data value",
+   "       - move temp to the next node",
     "main:",
     "test the functions in main:",
     "create an empty list in main",
-    "      - add values, print result, reverse, print again"
+    "      add values from the end, print result, reverse, print again"
 ];
 
 export const SinglyLLInsertAtEndCode = [

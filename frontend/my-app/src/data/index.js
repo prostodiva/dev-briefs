@@ -24,8 +24,12 @@ export const navLinks = [
         title: "Practice"
     },
     {
-        id: "Quizzes",
+        id: "quizzes",
         title: "Quizzes"
+    },
+    {
+        id: "challenge",
+        title: "#100DaysOfCode"
     },
     {
         id: "subscribe",
@@ -204,4 +208,13 @@ export const SinglyLLInsertAtIndexCode = [
 "  newNode->next = temp->next;  //new node gets injected into linked list",
 "  temp->next = newNode;  //current node now points to a new node",
 "}"
+];
+
+export const challengeData = [
+    {
+        day: 1,
+        content: "Started the #1000DaysOfCode challenge! Practiced data structures by implementing a linked list exercise. Focused on insertion operations.(InsertAtFront/Print)",
+        timestamp: "2025-05-30 10:00:00",
+        image: "day1-linkedlist"
+    }
 ];

@@ -1,3 +1,5 @@
+import { day1, day2 }  from "../assets/images";
+
 export const navLinks = [
     {
         id: "home",
@@ -215,6 +217,12 @@ export const challengeData = [
         day: 1,
         content: "Started the #100DaysOfCode challenge! Practiced data structures by implementing a linked list exercise. Focused on insertion operations.(InsertAtFront/Print)",
         timestamp: "2025-05-30 10:00:00",
-        image: "day1-linkedlist"
+        image: day1
+    },
+    {
+        day: 2,
+        content: "Practiced a Singly Linked List. Focused on insertion at End, and Reverse the list functions.",
+        timestamp: "2025-05-31 11:00:00",
+        image: day2
     }
 ];

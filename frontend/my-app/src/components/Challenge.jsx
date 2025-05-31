@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import day1Image from '../assets/images/day1-linkedlist.png';
+import React, { useEffect, useState } from 'react';
 import { challengeData } from '../data/index';
+import EnlargedImage from "./EnlargedImage.jsx";
 
-const PostCard = ({ day, content, timestamp, image }) => {
+const PostCard = ({ day, content, timestamp, image}) => {
     return (
         <div className="bg-white rounded-lg shadow-md p-6 mb-4 border border-gray-200">
             <div className="flex justify-between items-center mb-4">
@@ -12,8 +12,8 @@ const PostCard = ({ day, content, timestamp, image }) => {
             <p className="text-gray-700 mb-4">{content}</p>
             {image && (
                 <div className="mt-4 flex justify-center">
-                    <img 
-                        src={day1Image}
+                    <EnlargedImage
+                        src={image}
                         alt={`Day ${day} challenge`}
                         className="rounded-lg shadow-md max-w-[300px] w-full h-auto"
                     />
@@ -30,7 +30,7 @@ const Challenge = () => {
         const updateTime = () => {
             const now = new Date();
             const pstTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-            
+
             const options = {
                 weekday: 'long',
                 year: 'numeric',
@@ -47,6 +47,7 @@ const Challenge = () => {
                 local: now.toLocaleString('en-US', options),
                 pst: pstTime.toLocaleString('en-US', options)
             });
+
         };
 
         updateTime();
@@ -60,7 +61,7 @@ const Challenge = () => {
             <div className="mb-8">
                 <h1 className="text-3xl font-bold text-center mb-4">#100DaysOfCode Challenge</h1>
                 <p className="text-gray-600 text-center mb-6">Tracking my coding journey one day at a time</p>
-                
+
                 <div className="text-center mb-8 space-y-2">
                     <p className="text-lg font-semibold text-blue-600">
                         Progress: {challengeData.length} / 100 days

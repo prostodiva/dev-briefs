@@ -1,4 +1,4 @@
-import Challenge from "../components/Challenge.jsx"
+import Challenge from "../components/Challenge.jsx";
 import Navbar from "../components/Navbar.jsx";
 
 const ChallengePage = () => {

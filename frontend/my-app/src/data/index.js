@@ -1,4 +1,4 @@
-import { day1, day2 }  from "../assets/images";
+import { day1, day2 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -224,5 +224,12 @@ export const challengeData = [
         content: "Practiced a Singly Linked List. Focused on insertion at End, and Reverse the list functions.",
         timestamp: "2025-05-31 11:00:00",
         image: day2
+    }
+];
+
+export const tips = [
+    {
+        title: "Compile and Run on MAC Snippet",
+        url: "https://snippets.cacher.io/snippet/cf974c837e412dc446b4"
     }
 ];

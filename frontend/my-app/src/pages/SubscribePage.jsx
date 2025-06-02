@@ -7,7 +7,9 @@ const SubscribePage = () => {
             <div>
                 <Navbar />
             </div>
-            <Subscription />
+            <div>
+                <Subscription />
+            </div>
         </section>
     );
 };

@@ -1,4 +1,4 @@
-import { day1, day2, day3 } from "../assets/images";
+import { day1, day2, day3, day4 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -212,6 +212,23 @@ export const SinglyLLInsertAtIndexCode = [
 "}"
 ];
 
+export const SinglyLLDisplayRecursively = [
+    "void DisplayForward(Node*& head) {",
+    "  Node* temp = head;",
+    "  if (temp != nullptr) {",
+    "    cout << temp->data << \" -> \";",
+    "    DisplayForward(temp->next);",
+    "  }",
+    "}",
+    "void DisplayReversed(Node*& head) {",
+    "  Node* temp = head;",
+    "  if (temp != nullptr) {",
+    "    DisplayReversed(temp->next);",
+    "    cout << temp->data << \" -> \";",
+    "  }",
+    "}"
+];
+
 export const challengeData = [
     {
         day: 1,
@@ -230,6 +247,12 @@ export const challengeData = [
         content: "Practiced a Singly Linked List. Focused on InsertAtIndex and DetectCycle functions.",
         timestamp: "2025-06-01 9:55:00",
         image: day3
+    },
+    {
+        day: 4,
+        content: "Practiced a Singly Linked List. Focused on recursive calls. Display list forward/reversed using recursion. Time and space compexity - O(n)",
+        timestamp: "2025-06-2 4:00:00",
+        image: day4
     }
 ];
 

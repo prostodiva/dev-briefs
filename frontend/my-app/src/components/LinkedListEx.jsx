@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import {
+    SinglyLLDisplayRecursively,
     SinglyLLInsertAtEnd,
     SinglyLLInsertAtEndCode,
     SinglyLLInsertAtFront,
-    SinglyLLInsertAtFrontCode, SinglyLLInsertAtIndex, SinglyLLInsertAtIndexCode
+    SinglyLLInsertAtFrontCode,
+    SinglyLLInsertAtIndex,
+    SinglyLLInsertAtIndexCode
 } from "../data/index.js";
 
 function shuffle(array) {
@@ -57,8 +60,13 @@ const exercises = [
         description: "Using a template create: InsertAtFront/InsertAtIndex/Print Code Exercise",
         type: "code",
         data: SinglyLLInsertAtIndexCode
+    },
+    {
+        id: 7,
+        title: "Display Linked List forward and in reversed order, using recursion",
+        type: "code",
+        data: SinglyLLDisplayRecursively
     }
-
 ];
 
 const ExerciseNavigation = ({ exercises, activeExercise, onExerciseSelect }) => {
@@ -81,12 +89,7 @@ const ExerciseNavigation = ({ exercises, activeExercise, onExerciseSelect }) => 
     );
 };
 
-const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showCorrect, setShowCorrect, selected, setSelected, handleDragStart, handleDragOver, handleDrop, handleDragEnd, isCorrect }) => {
-    // Get the original correct order from the data source
-    const correctOrder = title.includes("Pseudocode") 
-        ? (title.includes("End") ? SinglyLLInsertAtEnd : SinglyLLInsertAtFront)
-        : (title.includes("Index") ? SinglyLLInsertAtIndexCode : SinglyLLInsertAtFrontCode);
-    
+const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showCorrect, setShowCorrect, selected, handleDragStart, handleDragOver, handleDrop, handleDragEnd, isCorrect }) => {
     return (
         <div className="mb-4">
             <h1 className="text-base font-bold mb-1">{title}</h1>
@@ -113,7 +116,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
             ) : showCorrect ? (
                 <>
                     <ul className="space-y-0.5">
-                        {correctOrder.map((line, idx) => (
+                        {lines.map((line, idx) => (
                             <li
                                 key={idx}
                                 className="p-1.5 my-0.5 bg-green-100 border border-green-300 rounded font-mono text-sm"
@@ -137,7 +140,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
                                 key={idx}
                                 draggable
                                 onDragStart={(e) => handleDragStart(e, idx)}
-                                onDragOver={(e) => handleDragOver(e, idx)}
+                                onDragOver={handleDragOver}
                                 onDrop={(e) => handleDrop(e, idx)}
                                 onDragEnd={handleDragEnd}
                                 className={`p-1.5 border rounded font-mono cursor-move transition-all duration-200 hover:shadow-md text-sm ${
@@ -180,208 +183,94 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
 
 const LinkedListEx = () => {
     const [activeExercise, setActiveExercise] = useState(1);
-
-    // State for first pseudocode exercise
-    const [pseudoLines, setPseudoLines] = useState(SinglyLLInsertAtFront);
-    const [pseudoSelected, setPseudoSelected] = useState(null);
-    const [pseudoShuffled, setPseudoShuffled] = useState(false);
-    const [pseudoShowCorrect, setPseudoShowCorrect] = useState(false);
-
-    // State for first code exercise
-    const [codeLines, setCodeLines] = useState(SinglyLLInsertAtFrontCode);
-    const [codeSelected, setCodeSelected] = useState(null);
-    const [codeShuffled, setCodeShuffled] = useState(false);
-    const [codeShowCorrect, setCodeShowCorrect] = useState(false);
-
-    // State for second pseudocode exercise
-    const [pseudo2Lines, setPseudo2Lines] = useState(SinglyLLInsertAtEnd);
-    const [pseudo2Selected, setPseudo2Selected] = useState(null);
-    const [pseudo2Shuffled, setPseudo2Shuffled] = useState(false);
-    const [pseudo2ShowCorrect, setPseudo2ShowCorrect] = useState(false);
-
-    // State for second code exercise
-    const [code2Lines, setCode2Lines] = useState(SinglyLLInsertAtEndCode);
-    const [code2Selected, setCode2Selected] = useState(null);
-    const [code2Shuffled, setCode2Shuffled] = useState(false);
-    const [code2ShowCorrect, setCode2ShowCorrect] = useState(false);
-
-    // State for InsertAtIndex pseudocode exercise
-    const [pseudo3Lines, setPseudo3Lines] = useState(SinglyLLInsertAtIndex);
-    const [pseudo3Selected, setPseudo3Selected] = useState(null);
-    const [pseudo3Shuffled, setPseudo3Shuffled] = useState(false);
-    const [pseudo3ShowCorrect, setPseudo3ShowCorrect] = useState(false);
-
-    // State for InsertAtIndex code exercise
-    const [code3Lines, setCode3Lines] = useState(SinglyLLInsertAtIndexCode);
-    const [code3Selected, setCode3Selected] = useState(null);
-    const [code3Shuffled, setCode3Shuffled] = useState(false);
-    const [code3ShowCorrect, setCode3ShowCorrect] = useState(false);
-
-    // Enhanced drag and drop handlers for pseudocode
-    const handlePseudoDragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setPseudoSelected(index);
-    };
-
-    const handlePseudoDragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handlePseudoDrop = (e, index) => {
-        e.preventDefault();
-        if (pseudoSelected === null) return;
-        
-        const newLines = [...pseudoLines];
-        const [moved] = newLines.splice(pseudoSelected, 1);
-        newLines.splice(index, 0, moved);
-        setPseudoLines(newLines);
-        setPseudoSelected(null);
-    };
-
-    const handlePseudoDragEnd = () => {
-        setPseudoSelected(null);
-    };
-
-    // Enhanced drag and drop handlers for code
-    const handleCodeDragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setCodeSelected(index);
-    };
-
-    const handleCodeDragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handleCodeDrop = (e, index) => {
-        e.preventDefault();
-        if (codeSelected === null) return;
-        
-        const newLines = [...codeLines];
-        const [moved] = newLines.splice(codeSelected, 1);
-        newLines.splice(index, 0, moved);
-        setCodeLines(newLines);
-        setCodeSelected(null);
-    };
-
-    const handleCodeDragEnd = () => {
-        setCodeSelected(null);
-    };
-
-    // Enhanced drag and drop handlers for second pseudocode
-    const handlePseudo2DragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setPseudo2Selected(index);
-    };
-
-    const handlePseudo2DragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handlePseudo2Drop = (e, index) => {
-        e.preventDefault();
-        if (pseudo2Selected === null) return;
-        
-        const newLines = [...pseudo2Lines];
-        const [moved] = newLines.splice(pseudo2Selected, 1);
-        newLines.splice(index, 0, moved);
-        setPseudo2Lines(newLines);
-        setPseudo2Selected(null);
-    };
-
-    const handlePseudo2DragEnd = () => {
-        setPseudo2Selected(null);
-    };
-
-    // Enhanced drag and drop handlers for second code exercise
-    const handleCode2DragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setCode2Selected(index);
-    };
-
-    const handleCode2DragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handleCode2Drop = (e, index) => {
-        e.preventDefault();
-        if (code2Selected === null) return;
-        
-        const newLines = [...code2Lines];
-        const [moved] = newLines.splice(code2Selected, 1);
-        newLines.splice(index, 0, moved);
-        setCode2Lines(newLines);
-        setCode2Selected(null);
-    };
-
-    const handleCode2DragEnd = () => {
-        setCode2Selected(null);
-    };
-
-    // Enhanced drag and drop handlers for InsertAtIndex exercise
-    const handlePseudo3DragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setPseudo3Selected(index);
-    };
-
-    const handlePseudo3DragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handlePseudo3Drop = (e, index) => {
-        e.preventDefault();
-        if (pseudo3Selected === null) return;
-        
-        const newLines = [...pseudo3Lines];
-        const [moved] = newLines.splice(pseudo3Selected, 1);
-        newLines.splice(index, 0, moved);
-        setPseudo3Lines(newLines);
-        setPseudo3Selected(null);
-    };
-
-    const handlePseudo3DragEnd = () => {
-        setPseudo3Selected(null);
-    };
-
-    // Enhanced drag and drop handlers for InsertAtIndex code exercise
-    const handleCode3DragStart = (e, index) => {
-        e.dataTransfer.effectAllowed = 'move';
-        setCode3Selected(index);
-    };
-
-    const handleCode3DragOver = (e, index) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = 'move';
-    };
-
-    const handleCode3Drop = (e, index) => {
-        e.preventDefault();
-        if (code3Selected === null) return;
-        
-        const newLines = [...code3Lines];
-        const [moved] = newLines.splice(code3Selected, 1);
-        newLines.splice(index, 0, moved);
-        setCode3Lines(newLines);
-        setCode3Selected(null);
-    };
-
-    const handleCode3DragEnd = () => {
-        setCode3Selected(null);
-    };
-
-    // Check if the order is correct for all exercises
-    const isPseudoCorrect = JSON.stringify(pseudoLines) === JSON.stringify(SinglyLLInsertAtFront);
-    const isCodeCorrect = JSON.stringify(codeLines) === JSON.stringify(SinglyLLInsertAtFrontCode);
-    const isPseudo2Correct = JSON.stringify(pseudo2Lines) === JSON.stringify(SinglyLLInsertAtEnd);
-    const isCode2Correct = JSON.stringify(code2Lines) === JSON.stringify(SinglyLLInsertAtEndCode);
-    const isPseudo3Correct = JSON.stringify(pseudo3Lines) === JSON.stringify(SinglyLLInsertAtIndex);
-    const isCode3Correct = JSON.stringify(code3Lines) === JSON.stringify(SinglyLLInsertAtIndexCode);
+    const [exerciseStates, setExerciseStates] = useState(() => {
+        // Initialize state for all exercises
+        const states = new Map();
+        exercises.forEach(exercise => {
+            states.set(exercise.id, {
+                lines: exercise.data,
+                selected: null,
+                shuffled: false,
+                showCorrect: false
+            });
+        });
+        return states;
+    });
 
     const currentExercise = exercises.find(ex => ex.id === activeExercise);
+    const currentState = exerciseStates.get(currentExercise.id);
+
+    const handleDragStart = (e, index) => {
+        e.dataTransfer.effectAllowed = 'move';
+        setExerciseStates(prev => {
+            const newStates = new Map(prev);
+            newStates.set(currentExercise.id, {
+                ...currentState,
+                selected: index
+            });
+            return newStates;
+        });
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+    };
+
+    const handleDrop = (e, index) => {
+        e.preventDefault();
+        if (currentState.selected === null) return;
+        
+        const newLines = [...currentState.lines];
+        const [moved] = newLines.splice(currentState.selected, 1);
+        newLines.splice(index, 0, moved);
+        
+        setExerciseStates(prev => {
+            const newStates = new Map(prev);
+            newStates.set(currentExercise.id, {
+                ...currentState,
+                lines: newLines,
+                selected: null
+            });
+            return newStates;
+        });
+    };
+
+    const handleDragEnd = () => {
+        setExerciseStates(prev => {
+            const newStates = new Map(prev);
+            newStates.set(currentExercise.id, {
+                ...currentState,
+                selected: null
+            });
+            return newStates;
+        });
+    };
+
+    const handleShuffle = () => {
+        setExerciseStates(prev => {
+            const newStates = new Map(prev);
+            newStates.set(currentExercise.id, {
+                ...currentState,
+                lines: shuffle(currentExercise.data),
+                shuffled: true
+            });
+            return newStates;
+        });
+    };
+
+    const handleShowCorrect = (show) => {
+        setExerciseStates(prev => {
+            const newStates = new Map(prev);
+            newStates.set(currentExercise.id, {
+                ...currentState,
+                showCorrect: show
+            });
+            return newStates;
+        });
+    };
+
+    const isCorrect = JSON.stringify(currentState.lines) === JSON.stringify(currentExercise.data);
 
     return (
         <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10">
@@ -391,131 +280,21 @@ const LinkedListEx = () => {
                 onExerciseSelect={setActiveExercise}
             />
             
-            {currentExercise.type === "pseudocode" ? (
-                currentExercise.id === 1 ? (
-                    <ExerciseSection
-                        title={currentExercise.title}
-                        description={currentExercise.description}
-                        lines={pseudoLines}
-                        onShuffle={() => {
-                            setPseudoLines(shuffle(SinglyLLInsertAtFront));
-                            setPseudoShuffled(true);
-                        }}
-                        shuffled={pseudoShuffled}
-                        showCorrect={pseudoShowCorrect}
-                        setShowCorrect={setPseudoShowCorrect}
-                        selected={pseudoSelected}
-                        setSelected={setPseudoSelected}
-                        handleDragStart={handlePseudoDragStart}
-                        handleDragOver={handlePseudoDragOver}
-                        handleDrop={handlePseudoDrop}
-                        handleDragEnd={handlePseudoDragEnd}
-                        isCorrect={isPseudoCorrect}
-                    />
-                ) : currentExercise.id === 3 ? (
-                    <ExerciseSection
-                        title={currentExercise.title}
-                        description={currentExercise.description}
-                        lines={pseudo2Lines}
-                        onShuffle={() => {
-                            setPseudo2Lines(shuffle(SinglyLLInsertAtEnd));
-                            setPseudo2Shuffled(true);
-                        }}
-                        shuffled={pseudo2Shuffled}
-                        showCorrect={pseudo2ShowCorrect}
-                        setShowCorrect={setPseudo2ShowCorrect}
-                        selected={pseudo2Selected}
-                        setSelected={setPseudo2Selected}
-                        handleDragStart={handlePseudo2DragStart}
-                        handleDragOver={handlePseudo2DragOver}
-                        handleDrop={handlePseudo2Drop}
-                        handleDragEnd={handlePseudo2DragEnd}
-                        isCorrect={isPseudo2Correct}
-                    />
-                ) : (
-                    <ExerciseSection
-                        title={currentExercise.title}
-                        description={currentExercise.description}
-                        lines={pseudo3Lines}
-                        onShuffle={() => {
-                            setPseudo3Lines(shuffle(SinglyLLInsertAtIndex));
-                            setPseudo3Shuffled(true);
-                        }}
-                        shuffled={pseudo3Shuffled}
-                        showCorrect={pseudo3ShowCorrect}
-                        setShowCorrect={setPseudo3ShowCorrect}
-                        selected={pseudo3Selected}
-                        setSelected={setPseudo3Selected}
-                        handleDragStart={handlePseudo3DragStart}
-                        handleDragOver={handlePseudo3DragOver}
-                        handleDrop={handlePseudo3Drop}
-                        handleDragEnd={handlePseudo3DragEnd}
-                        isCorrect={isPseudo3Correct}
-                    />
-                )
-            ) : (
-                currentExercise.id === 2 ? (
-                    <ExerciseSection
-                        title={currentExercise.title}
-                        description={currentExercise.description}
-                        lines={codeLines}
-                        onShuffle={() => {
-                            setCodeLines(shuffle(SinglyLLInsertAtFrontCode));
-                            setCodeShuffled(true);
-                        }}
-                        shuffled={codeShuffled}
-                        showCorrect={codeShowCorrect}
-                        setShowCorrect={setCodeShowCorrect}
-                        selected={codeSelected}
-                        setSelected={setCodeSelected}
-                        handleDragStart={handleCodeDragStart}
-                        handleDragOver={handleCodeDragOver}
-                        handleDrop={handleCodeDrop}
-                        handleDragEnd={handleCodeDragEnd}
-                        isCorrect={isCodeCorrect}
-                    />
-                ) : currentExercise.id === 4 ? (
-                    <ExerciseSection
-                        title={currentExercise.title}
-                        description={currentExercise.description}
-                        lines={code2Lines}
-                        onShuffle={() => {
-                            setCode2Lines(shuffle(SinglyLLInsertAtEndCode));
-                            setCode2Shuffled(true);
-                        }}
-                        shuffled={code2Shuffled}
-                        showCorrect={code2ShowCorrect}
-                        setShowCorrect={setCode2ShowCorrect}
-                        selected={code2Selected}
-                        setSelected={setCode2Selected}
-                        handleDragStart={handleCode2DragStart}
-                        handleDragOver={handleCode2DragOver}
-                        handleDrop={handleCode2Drop}
-                        handleDragEnd={handleCode2DragEnd}
-                        isCorrect={isCode2Correct}
-                    />
-                ) : (
-                    <ExerciseSection
-                        title={currentExercise.title}
-                        description={currentExercise.description}
-                        lines={code3Lines}
-                        onShuffle={() => {
-                            setCode3Lines(shuffle(SinglyLLInsertAtIndexCode));
-                            setCode3Shuffled(true);
-                        }}
-                        shuffled={code3Shuffled}
-                        showCorrect={code3ShowCorrect}
-                        setShowCorrect={setCode3ShowCorrect}
-                        selected={code3Selected}
-                        setSelected={setCode3Selected}
-                        handleDragStart={handleCode3DragStart}
-                        handleDragOver={handleCode3DragOver}
-                        handleDrop={handleCode3Drop}
-                        handleDragEnd={handleCode3DragEnd}
-                        isCorrect={isCode3Correct}
-                    />
-                )
-            )}
+            <ExerciseSection
+                title={currentExercise.title}
+                description={currentExercise.description}
+                lines={currentState.lines}
+                onShuffle={handleShuffle}
+                shuffled={currentState.shuffled}
+                showCorrect={currentState.showCorrect}
+                setShowCorrect={handleShowCorrect}
+                selected={currentState.selected}
+                handleDragStart={handleDragStart}
+                handleDragOver={handleDragOver}
+                handleDrop={handleDrop}
+                handleDragEnd={handleDragEnd}
+                isCorrect={isCorrect}
+            />
         </div>
     );
 };

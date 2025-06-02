@@ -1,10 +1,13 @@
 import Navbar from "../components/Navbar.jsx";
+import Subscription from "../components/Subscription.jsx";
 
 const SubscribePage = () => {
     return (
         <section>
-            <Navbar />
-            <h1>Subscribe page</h1>
+            <div>
+                <Navbar />
+            </div>
+            <Subscription />
         </section>
     );
 };

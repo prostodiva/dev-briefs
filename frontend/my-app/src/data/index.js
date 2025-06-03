@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4 } from "../assets/images";
+import { day1, day2, day3, day4, day5 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -253,6 +253,12 @@ export const challengeData = [
         content: "Practiced a Singly Linked List. Focused on recursive calls. Display list forward/reversed using recursion. Time and space compexity - O(n)",
         timestamp: "2025-06-2 4:00:00",
         image: day4
+    },
+    {
+        day: 5,
+        content: "Added snippet to the tips section. Setup a basic full-stack project with react, vite, express.",
+        timestamp: "2025-06-03 11:00:00",
+        image: day5
     }
 ];
 
@@ -260,5 +266,9 @@ export const tips = [
     {
         title: "Compile and Run on MAC Snippet",
         url: "https://snippets.cacher.io/snippet/cf974c837e412dc446b4"
+    },
+    {
+        title: "A full-Stack Project. Basic setup instructions. ",
+        url: "https://snippets.cacher.io/snippet/26b106e2032386165e59"
     }
 ];

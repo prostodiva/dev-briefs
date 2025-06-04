@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5 } from "../assets/images";
+import { day1, day2, day3, day4, day5, day6 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -259,6 +259,12 @@ export const challengeData = [
         content: "Added snippet to the tips section. Setup a basic full-stack project with react, vite, express.",
         timestamp: "2025-06-03 11:00:00",
         image: day5
+    },
+    {
+        day: 6,
+        content: "Practiced Linear Search + FindMax Key in a Linked List. (with while and recursively). Solved hackerrank PlusMinus Problem. ",
+        timestamp: "2025-06-04 9:22:00",
+        image: [day6]
     }
 ];
 

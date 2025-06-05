@@ -5,10 +5,10 @@ import Navbar from "../components/Navbar.jsx";
 const PracticeCard = ({ title, onSelect }) => {
     return (
         <div 
-            className="bg-blue-300 h-40 rounded-2xl flex flex-col items-center justify-center transform cursor-pointer hover:bg-blue-400"
+            className="p-4 m-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow h-40 flex flex-col items-center justify-center  hover:shadow-blue-900  hover:-translate-y-2 duration-300"
             onClick={onSelect}
         >
-            <h3 className="text-white text-xl font-bold mb-2 font-inter">{title}</h3>
+            <h3 className="text-black text-xl font-bold mb-2 font-inter">{title}</h3>
         </div>
     );
 };
@@ -42,7 +42,7 @@ const PracticePage = () => {
     }
 
     return (
-        <div className="w-full px-4 py-30 pb-32 mt-32">
+        <div className="w-full px-4 py-30 pb-32 ">
             <div>
                 <Navbar />
             </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { challengeData } from '../data/index';
 import EnlargedImage from "./EnlargedImage.jsx";
 
-const PostCard = ({ day, content, timestamp, image}) => {
+const PostCard = ({ day, content, timestamp, image }) => {
     return (
         <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 border border-gray-200">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">

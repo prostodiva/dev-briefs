@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7 } from "../assets/images";
+import {day1, day2, day3, day4, day5, day6, day7, day8} from "../assets/images";
 
 export const navLinks = [
     {
@@ -271,6 +271,12 @@ export const challengeData = [
         content: "Solved hackerrank Min Max Sum problem using sort(arr.begin(), arr.end())",
         timestamp: "2025-06-05 6:00:00",
         image: day7
+    },
+    {
+        day: 8,
+        content: "Solved hackerrank problem. Time conversion: from 12-hour format to 24-hour format. ",
+        timestamp: "2025-06-06 10:14:00",
+        image: day8
     }
 ];
 

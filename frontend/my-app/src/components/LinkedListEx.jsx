@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-    SinglyLLDisplayRecursively,
-    SinglyLLInsertAtEnd,
-    SinglyLLInsertAtEndCode,
-    SinglyLLInsertAtFront,
-    SinglyLLInsertAtFrontCode,
-    SinglyLLInsertAtIndex,
-    SinglyLLInsertAtIndexCode
-} from "../data/index.js";
+import { exercises } from "../data/index.js";
 
 function shuffle(array) {
     const arr = [...array];
@@ -17,57 +9,6 @@ function shuffle(array) {
     }
     return arr;
 }
-
-const exercises = [
-    {
-        id: 1,
-        title: "InsertAtFront/Display Pseudocode Exercise",
-        description: "Create and Display Singly Linked List. Insert Nodes At Front.",
-        type: "pseudocode",
-        data: SinglyLLInsertAtFront
-    },
-    {
-        id: 2,
-        title: "InsertAtFront/Display Code Exercise",
-        description: "Create and Display Singly Linked List. Insert Nodes At Front.",
-        type: "code",
-        data: SinglyLLInsertAtFrontCode
-    },
-    {
-        id: 3,
-        title: "InsertAtEnd/Reverse Pseudocode Exercise",
-        description: "Insert Node At End of Linked List and display in reverse order",
-        type: "pseudocode",
-        data: SinglyLLInsertAtEnd
-    },
-    {
-        id: 4,
-        title: "InsertAtEnd/Reverse Code Exercise",
-        description: "Insert Node At End of Linked List and display in reverse order",
-        type: "code",
-        data: SinglyLLInsertAtEndCode
-    },
-    {
-        id: 5,
-        title: "InsertAtIndex Function Pseudocode Exercise",
-        description: "Create a Function to insert node at Nth index",
-        type: "pseudocode",
-        data: SinglyLLInsertAtIndex
-    },
-    {
-        id: 6,
-        title: "InsertAtIndex Code Exercise",
-        description: "Using a template create: InsertAtFront/InsertAtIndex/Print Code Exercise",
-        type: "code",
-        data: SinglyLLInsertAtIndexCode
-    },
-    {
-        id: 7,
-        title: "Display Linked List forward and in reversed order, using recursion",
-        type: "code",
-        data: SinglyLLDisplayRecursively
-    }
-];
 
 const ExerciseNavigation = ({ exercises, activeExercise, onExerciseSelect }) => {
     return (

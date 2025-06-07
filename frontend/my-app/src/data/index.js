@@ -290,3 +290,73 @@ export const tips = [
         url: "https://snippets.cacher.io/snippet/26b106e2032386165e59"
     }
 ];
+
+export const questions = [
+    {
+        question: "Explain what an API endpoint is?",
+        answer: "An API endpoint is a specific URL that acts as an entry point into a specific service or a functionality within a service.\n" +
+                "\n" +
+                "Through an API endpoint, client applications can interact with the server sending requests (sometimes even with data in the form of payload) and receive a response from it.\n" +
+                "\n" +
+                "Usually, each endpoint can be mapped to a single feature inside the server.",
+        category: "Backend"
+    },
+    {
+        question: "Can you explain the difference between SQL and NoSQL databases?",
+        answer: "SQL databases (or relational databases as they’re also known) rely on a predefined schema (or structure) for their data. Whenever you describe a record, or table inside the database, you do so through its format (name and fields).\n" +
+                "\n" +
+                "In NoSQL databases, there is no schema, so there is no predefined structure to the data. You usually have collections of records that are not obligated to have the same structure, even if they represent conceptually the same thing.",
+        category: "Backend"
+    }
+];
+
+export const exercises = [
+    {
+        id: 1,
+        title: "InsertAtFront/Display Pseudocode Exercise",
+        description: "Create and Display Singly Linked List. Insert Nodes At Front.",
+        type: "pseudocode",
+        data: SinglyLLInsertAtFront
+    },
+    {
+        id: 2,
+        title: "InsertAtFront/Display Code Exercise",
+        description: "Create and Display Singly Linked List. Insert Nodes At Front.",
+        type: "code",
+        data: SinglyLLInsertAtFrontCode
+    },
+    {
+        id: 3,
+        title: "InsertAtEnd/Reverse Pseudocode Exercise",
+        description: "Insert Node At End of Linked List and display in reverse order",
+        type: "pseudocode",
+        data: SinglyLLInsertAtEnd
+    },
+    {
+        id: 4,
+        title: "InsertAtEnd/Reverse Code Exercise",
+        description: "Insert Node At End of Linked List and display in reverse order",
+        type: "code",
+        data: SinglyLLInsertAtEndCode
+    },
+    {
+        id: 5,
+        title: "InsertAtIndex Function Pseudocode Exercise",
+        description: "Create a Function to insert node at Nth index",
+        type: "pseudocode",
+        data: SinglyLLInsertAtIndex
+    },
+    {
+        id: 6,
+        title: "InsertAtIndex Code Exercise",
+        description: "Using a template create: InsertAtFront/InsertAtIndex/Print Code Exercise",
+        type: "code",
+        data: SinglyLLInsertAtIndexCode
+    },
+    {
+        id: 7,
+        title: "Display Linked List forward and in reversed order, using recursion",
+        type: "code",
+        data: SinglyLLDisplayRecursively
+    }
+];

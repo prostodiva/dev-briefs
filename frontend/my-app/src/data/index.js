@@ -1,4 +1,4 @@
-import {day1, day2, day3, day4, day5, day6, day7, day8} from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -277,6 +277,12 @@ export const challengeData = [
         content: "Solved hackerrank problem. Time conversion: from 12-hour format to 24-hour format. ",
         timestamp: "2025-06-06 10:14:00",
         image: day8
+    },
+    {
+        day: 9,
+        content: "Add Data Structures Card to dev-briefs project for practicing the Interview Questions.",
+        timestamp: "2025-06-09 8:05:00",
+        image: day9
     }
 ];
 
@@ -303,10 +309,45 @@ export const questions = [
     },
     {
         question: "Can you explain the difference between SQL and NoSQL databases?",
-        answer: "SQL databases (or relational databases as they’re also known) rely on a predefined schema (or structure) for their data. Whenever you describe a record, or table inside the database, you do so through its format (name and fields).\n" +
+        answer: "SQL databases (or relational databases as they're also known) rely on a predefined schema (or structure) for their data. Whenever you describe a record, or table inside the database, you do so through its format (name and fields).\n" +
                 "\n" +
                 "In NoSQL databases, there is no schema, so there is no predefined structure to the data. You usually have collections of records that are not obligated to have the same structure, even if they represent conceptually the same thing.",
         category: "Backend"
+    },
+    {
+        question: "What's the base of the log?",
+        answer: "Logs of different bases are only off by a constant factor. For this reason, we ignore what the base of a log within a big O expression. It doesn't matter since we drop constants.",
+        category: "Data Structure"
+    },
+    {
+        question: "What is a Linked List and what are its advantages?",
+        answer: "A Linked List is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.\n\n" +
+                "Advantages:\n" +
+                "1. Dynamic size - can grow or shrink as needed\n" +
+                "2. Efficient insertions and deletions - O(1) at the beginning\n" +
+                "3. No wasted memory - only allocates space for elements that are actually stored\n" +
+                "4. No need to pre-allocate space",
+        category: "Data Structure"
+    },
+    {
+        question: "What is the time complexity of searching in a Binary Search Tree?",
+        answer: "The time complexity of searching in a Binary Search Tree (BST) is O(h), where h is the height of the tree.\n\n" +
+                "In a balanced BST (like AVL or Red-Black trees), the height is O(log n), making search operations O(log n).\n\n" +
+                "However, in the worst case (when the tree becomes a linear chain), the height becomes O(n), making search operations O(n).",
+        category: "Data Structure"
+    },
+    {
+        question: "What is the difference between a Stack and a Queue?",
+        answer: "Stack and Queue are both linear data structures, but they differ in how elements are accessed:\n\n" +
+                "Stack:\n" +
+                "- LIFO (Last In First Out) structure\n" +
+                "- Elements are added and removed from the same end (top)\n" +
+                "- Common operations: push, pop, peek\n\n" +
+                "Queue:\n" +
+                "- FIFO (First In First Out) structure\n" +
+                "- Elements are added at one end (rear) and removed from the other end (front)\n" +
+                "- Common operations: enqueue, dequeue, peek",
+        category: "Data Structure"
     }
 ];
 

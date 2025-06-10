@@ -8,7 +8,7 @@ import TutorialsPage from "./pages/TutorialsPage.jsx";
 import SubscribePage from "./pages/SubscribePage.jsx";
 import QuizzesPage from "./pages/QuizzesPage.jsx";
 import ChallengePage from "./pages/ChallengePage";
-import Card from "./components/Card.jsx";
+import CardPage from "./pages/CardPage.jsx";
 
 const AppRoutes = () => {
     return (
@@ -23,7 +23,7 @@ const AppRoutes = () => {
             <Route path="/subscribe" element={<SubscribePage />} />
             <Route path="/quizzes" element={<QuizzesPage />} />
             <Route path="/challenge" element={<ChallengePage />} />
-            <Route path="/card" element={<Card />} />
+            <Route path="/card" element={<CardPage />} />
         </Routes>
     );
 };

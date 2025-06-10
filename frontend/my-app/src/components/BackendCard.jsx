@@ -6,7 +6,7 @@ const CardModel = ({ question, answer }) => {
 
     return (
         <div 
-            className="relative h-64 w-full cursor-pointer perspective-1000"
+            className="relative h-48 w-full cursor-pointer perspective-1000"
             onClick={() => setIsFlipped(!isFlipped)}
         >
             <div className={`relative w-full h-full transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
@@ -25,7 +25,7 @@ const CardModel = ({ question, answer }) => {
     );
 };
 
-const Card = () => {
+const BackendCard = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const backendQuestions = questions.filter((question) => question.category === "Backend");
 
@@ -42,20 +42,14 @@ const Card = () => {
     };
 
     return (
-        <section className="max-w-2xl mx-auto px-4 py-6 sm:p-6 mt-20 sm:mt-32">
-            <div className="flex justify-between items-center mb-8">
-                <button
-                    onClick={() => window.history.back()}
-                    className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 text-sm transition-colors"
-                >
-                    Back to Interview
-                </button>
-                <h2 className="text-2xl font-bold text-center">Backend Interview Questions</h2>
-                <div className="w-24"></div> {/* Spacer for alignment */}
+        <section className="max-w-xl mx-auto px-3 py-4 sm:p-4 bg-gray-50 rounded-lg">
+            <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold text-center">Backend Interview Questions</h2>
+                <div className="w-20"></div> {/* Spacer for alignment */}
             </div>
             
             <div className="relative">
-                <div className="mb-8">
+                <div className="mb-4">
                     <CardModel 
                         question={backendQuestions[currentIndex].question} 
                         answer={backendQuestions[currentIndex].answer} 
@@ -86,4 +80,4 @@ const Card = () => {
     );
 }
 
-export default Card;
+export default BackendCard;

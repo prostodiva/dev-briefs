@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7, day8, day9 } from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -283,6 +283,12 @@ export const challengeData = [
         content: "Add Data Structures Card to dev-briefs project for practicing the Interview Questions.",
         timestamp: "2025-06-09 8:05:00",
         image: day9
+    },
+    {
+        day: 10,
+        content: "Setup a SOG project with docker. Practice git commands to switch branches for team collaboration",
+        timestamp: "2025-06-10 7:22:00",
+        image: day10
     }
 ];
 

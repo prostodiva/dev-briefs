@@ -3,14 +3,10 @@ import Navbar from "../components/Navbar.jsx";
 
 const HomePage = () => {
     return (
-        <div>
-            <header>
-                <Navbar />
-            </header>
+        <div className="relative">
+            <Navbar />
             <main>
-                <section>
-                    <Hero />
-                </section>
+                <Hero />
             </main>
         </div>
     );

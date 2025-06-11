@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar.jsx";
+import {back3} from "../assets/images/index.jsx";
 
 const AboutPage = () => {
     const [iframeLoaded, setIframeLoaded] = useState(false);
@@ -7,6 +8,7 @@ const AboutPage = () => {
     return (
         <section>
             <Navbar />
+            <img src={back3} alt="Background" className="w-full h-full object-cover absolute inset-0"/>
             <div className="flex justify-center items-center min-h-screen">
                 <div className="w-full max-w-2xl aspect-video rounded-lg shadow-lg overflow-hidden relative">
                     {!iframeLoaded && (

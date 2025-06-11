@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10 } from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -289,6 +289,12 @@ export const challengeData = [
         content: "Setup a SOG project with docker. Practice git commands to switch branches for team collaboration",
         timestamp: "2025-06-10 7:22:00",
         image: day10
+    },
+    {
+        day: 11,
+        content: "Was assigned to be a team lead for a volunteer web-app project (SOG). Practiced assign tasks to a team (frontend and backend)",
+        timestamp: "2025-06-11 10:05:00",
+        image: day11
     }
 ];
 

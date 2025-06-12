@@ -12,14 +12,14 @@ const AboutPage = () => {
                         {!iframeLoaded && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
                                 <img
-                                    src="https://img.youtube.com/vi/vD4wkF1YQMo/maxresdefault.jpg"
+                                    src="https://img.youtube.com/vi/KYUJ7cqIzXA/maxresdefault.jpg"
                                     alt="Video thumbnail"
                                     className="absolute inset-0 w-full h-full object-cover"
                                 />
                             </div>
                         )}
                         <iframe
-                            src="https://www.youtube.com/embed/vD4wkF1YQMo"
+                            src="https://youtu.be/KYUJ7cqIzXA"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

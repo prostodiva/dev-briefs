@@ -436,20 +436,20 @@ export const exercises = [
 export const video = [
     {
         id: 1,
-        title: "Singly Linked List. InsertAtFront, PrintList.",
-        category: "Data Structures",
+        title: "InsertAtFront, PrintList.",
+        category: "Singly Linked List",
         src: "https://www.youtube.com/embed/94INxxBhz0g"
     },
     {
         id: 2,
-        title: "Singly Linked List. InsertAtBack, ReverseList.",
-        category: "Data Structures",
+        title: "InsertAtBack, ReverseList.",
+        category: "Singly Linked List",
         src: "https://www.youtube.com/embed/AIAhIu0lqnw"
     },
     {
         id: 3,
-        title: "Singly Linked List. InsertAtIndex.",
-        category: "Data Structures",
+        title: "InsertAtIndex.",
+        category: "Singly Linked List",
         src: "https://www.youtube.com/embed/jtvX2VcWw4A"
     }
 ];

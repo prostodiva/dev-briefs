@@ -90,7 +90,7 @@ const Tutorials = () => {
         <section className="py-12 bg-gray-50">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-8 mt-16">Video Tutorials</h2>
-                
+                <h3 className="text-xl font-light text-center">Data Structures</h3>
                 <div 
                     ref={scrollContainerRef}
                     className="overflow-x-auto pb-4 scrollbar-hide"

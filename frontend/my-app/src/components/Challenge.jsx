@@ -3,6 +3,7 @@ import { challengeData } from '../data/index';
 import EnlargedImage from "./EnlargedImage.jsx";
 
 const PostCard = ({ day, content, timestamp, image }) => {
+    console.log('Image prop:', image); // Debug log
     return (
         <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 border border-gray-200">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
@@ -53,6 +54,8 @@ const Challenge = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    console.log('Challenge data:', challengeData); // Debug log
 
     return (
         <section className="max-w-4xl mx-auto px-4 py-6 sm:p-6">

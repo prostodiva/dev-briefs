@@ -214,7 +214,7 @@ const LinkedListEx = () => {
     const isCorrect = JSON.stringify(currentState.lines) === JSON.stringify(currentExercise.data);
 
     return (
-        <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10">
+        <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10 mt-16">
             <ExerciseNavigation 
                 exercises={exercises}
                 activeExercise={activeExercise}

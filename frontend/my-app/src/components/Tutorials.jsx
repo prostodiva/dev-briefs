@@ -21,7 +21,7 @@ const TutorialsCard = ({ title, category, src }) => {
 
     return (
         <div className="w-[400px] flex-shrink-0 p-4">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="aspect-video relative group cursor-pointer">
                     {src ? (
                         <div 
@@ -44,7 +44,7 @@ const TutorialsCard = ({ title, category, src }) => {
                             ) : (
                                 <iframe
                                     ref={iframeRef}
-                                    src={`${src}?autoplay=1&fs=1`}
+                                    src={`${src}?autoplay=1&fs=1&rel=0&modestbranding=1`}
                                     title={title}
                                     className="w-full h-full absolute inset-0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -70,7 +70,6 @@ const TutorialsCard = ({ title, category, src }) => {
 
 const Tutorials = () => {
     const scrollContainerRef = useRef(null);
-    const loopedVideos = [...video, ...video, ...video];
 
     useEffect(() => {
         const scrollContainer = scrollContainerRef.current;
@@ -97,9 +96,9 @@ const Tutorials = () => {
                     className="overflow-x-auto pb-4 scrollbar-hide"
                     style={{ scrollBehavior: 'smooth' }}
                 >
-                    <div className="flex gap-6 min-w-max px-4">
-                        {loopedVideos.map((video, index) => (
-                            <TutorialsCard key={`${video.id}-${index}`} {...video} />
+                    <div className="flex gap-6 px-4">
+                        {video.map((video) => (
+                            <TutorialsCard key={video.id} {...video} />
                         ))}
                     </div>
                 </div>

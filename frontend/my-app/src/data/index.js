@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11 } from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12} from "../assets/images";
 
 export const navLinks = [
     {
@@ -295,7 +295,14 @@ export const challengeData = [
         content: "Was assigned to be a team lead for a volunteer web-app project (SOG). Practiced assign tasks to a team (frontend and backend)",
         timestamp: "2025-06-11 10:05:00",
         image: day11
+    },
+    {
+        day: 12,
+        content: "Add Tutorials scrolling feature on the dev-briefs. Add Quick Tips",
+        timestamp: "2025-06-11 10:28:00",
+        image: day12
     }
+
 ];
 
 export const tips = [
@@ -314,6 +321,10 @@ export const tips = [
     {
         title: "Setup a Full-Stack App with Docker",
         url: "https://snippets.cacher.io/snippet/9ae78b50bcdaaba8fceb"
+    },
+    {
+        title: "Video Scrolling Feature",
+        url: "https://snippets.cacher.io/snippet/d228ca0edf81692f23c1"
     }
 ];
 

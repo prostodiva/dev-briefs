@@ -9,8 +9,8 @@ import day8 from "./day8.png";
 import day9 from "./day9.png";
 import day10 from "./day10.png";
 import day11 from "./day11.png";
-import back3 from "./back3.png";
+import back4 from "./back4.png";
 
-export { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, back3 };
+export { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, back4 };
 
 

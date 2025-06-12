@@ -42,51 +42,47 @@ const Challenge = () => {
                 timeZoneName: 'short'
             };
 
-            // Update current time
             setCurrentTime({
                 local: now.toLocaleString('en-US', options),
                 pst: pstTime.toLocaleString('en-US', options)
             });
-
         };
 
         updateTime();
-        const interval = setInterval(updateTime, 60000); // Update every minute
+        const interval = setInterval(updateTime, 60000);
 
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <section className="max-w-4xl mx-auto px-4 py-6 sm:p-6 mt-20 sm:mt-32 overflow-y-auto">
-                <div className="mb-8">
-                    <h1 className="text-2xl sm:text-3xl font-bold text-center mb-4">#100DaysOfCode Challenge</h1>
-                    <p className="text-gray-600 text-center mb-6 text-sm sm:text-base">Tracking my coding journey one day at a time</p>
+        <section className="max-w-4xl mx-auto px-4 py-6 sm:p-6">
+            <div className="mb-8">
+                <h1 className="text-2xl sm:text-3xl font-bold text-center mb-4 mt-16">#100DaysOfCode Challenge</h1>
+                <p className="text-gray-600 text-center mb-6 text-sm sm:text-base">Tracking my coding journey one day at a time</p>
 
-                    <div className="text-center mb-8 space-y-2">
-                        <p className="text-base sm:text-lg font-semibold text-blue-600">
-                            Progress: {challengeData.length} / 100 days
-                        </p>
-                        <div className="text-xs sm:text-sm text-gray-600 space-y-1">
-                            <p>Local Time: {currentTime.local}</p>
-                            <p>PST Time: {currentTime.pst}</p>
-                        </div>
+                <div className="text-center mb-8 space-y-2">
+                    <p className="text-base sm:text-lg font-semibold text-blue-600">
+                        Progress: {challengeData.length} / 100 days
+                    </p>
+                    <div className="text-xs sm:text-sm text-gray-600 space-y-1">
+                        <p>Local Time: {currentTime.local}</p>
+                        <p>PST Time: {currentTime.pst}</p>
                     </div>
                 </div>
+            </div>
 
-                <div className="space-y-4 pb-8">
-                    {challengeData.map((post, index) => (
-                        <PostCard
-                            key={index}
-                            day={post.day}
-                            content={post.content}
-                            timestamp={post.timestamp}
-                            image={post.image}
-                        />
-                    ))}
-                </div>
-            </section>
-        </div>
+            <div className="space-y-4 pb-8">
+                {challengeData.map((post, index) => (
+                    <PostCard
+                        key={index}
+                        day={post.day}
+                        content={post.content}
+                        timestamp={post.timestamp}
+                        image={post.image}
+                    />
+                ))}
+            </div>
+        </section>
     );
 };
 

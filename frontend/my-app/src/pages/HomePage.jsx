@@ -1,14 +1,16 @@
 import Hero from '../components/Hero';
 import Navbar from "../components/Navbar.jsx";
+import Layout from "../components/Layout.jsx";
 
 const HomePage = () => {
     return (
-        <div className="relative">
-            <Navbar />
-            <main>
-                <Hero />
-            </main>
-        </div>
+        <Layout>
+            <div className="relative">
+                <main>
+                    <Hero />
+                </main>
+            </div>
+        </Layout>
     );
 };
 

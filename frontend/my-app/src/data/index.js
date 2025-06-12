@@ -306,6 +306,14 @@ export const tips = [
     {
         title: "A full-Stack Project. Basic setup instructions. ",
         url: "https://snippets.cacher.io/snippet/26b106e2032386165e59"
+    },
+    {
+        title: "Git Manipulations",
+        url: "https://snippets.cacher.io/snippet/34f2e3974f576f7a9d75"
+    },
+    {
+        title: "Setup a Full-Stack App with Docker",
+        url: "https://snippets.cacher.io/snippet/9ae78b50bcdaaba8fceb"
     }
 ];
 

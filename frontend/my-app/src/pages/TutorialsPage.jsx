@@ -1,11 +1,12 @@
-import Navbar from "../components/Navbar.jsx";
+import Tutorials from "../components/Tutorials";
+import Layout from "../components/Layout.jsx";
 
 const TutorialsPage = () => {
     return (
         <section>
-            <div>
-                <Navbar />
-            </div>
+            <Layout>
+                <Tutorials />
+            </Layout>
         </section>
     );
 };

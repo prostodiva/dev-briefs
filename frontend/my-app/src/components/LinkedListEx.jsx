@@ -161,11 +161,11 @@ const LinkedListEx = () => {
     const handleDrop = (e, index) => {
         e.preventDefault();
         if (currentState.selected === null) return;
-        
+
         const newLines = [...currentState.lines];
         const [moved] = newLines.splice(currentState.selected, 1);
         newLines.splice(index, 0, moved);
-        
+
         setExerciseStates(prev => {
             const newStates = new Map(prev);
             newStates.set(currentExercise.id, {
@@ -215,12 +215,12 @@ const LinkedListEx = () => {
 
     return (
         <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10 mt-16">
-            <ExerciseNavigation 
+            <ExerciseNavigation
                 exercises={exercises}
                 activeExercise={activeExercise}
                 onExerciseSelect={setActiveExercise}
             />
-            
+
             <ExerciseSection
                 title={currentExercise.title}
                 description={currentExercise.description}

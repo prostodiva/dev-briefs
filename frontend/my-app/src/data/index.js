@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12} from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13} from "../assets/images";
 
 export const navLinks = [
     {
@@ -299,8 +299,14 @@ export const challengeData = [
     {
         day: 12,
         content: "Add Tutorials scrolling feature on the dev-briefs. Add Quick Tips",
-        timestamp: "2025-06-11 10:28:00",
+        timestamp: "2025-06-12 10:28:00",
         image: day12
+    },
+    {
+        day: 13,
+        content: "Practiced DeleteNode and InsertInSortedList functions in Singly Linked List",
+        timestamp: "2025-06-13 9:22:00",
+        image: day13
     }
 
 ];

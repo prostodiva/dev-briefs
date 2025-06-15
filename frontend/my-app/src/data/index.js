@@ -465,5 +465,11 @@ export const video = [
         title: "Search and Move to Front in a Sorted Linked List",
         category: "Singly Linked List",
         src:"https://www.youtube.com/embed/1A5Xn2YBeek"
+    },
+    {
+        id: 5,
+        title: "Insert a Node in a Sorted Linked List",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/IDblyEv--kc"
     }
 ];

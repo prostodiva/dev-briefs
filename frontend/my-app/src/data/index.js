@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13} from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13, day14} from "../assets/images";
 
 export const navLinks = [
     {
@@ -32,10 +32,6 @@ export const navLinks = [
     {
         id: "challenge",
         title: "#100DaysOfCode"
-    },
-    {
-        id: "subscribe",
-        title: "Subscribe"
     }
 ];
 
@@ -292,7 +288,7 @@ export const challengeData = [
     },
     {
         day: 11,
-        content: "Was assigned to be a team lead for a volunteer web-app project (SOG). Practiced assign tasks to a team (frontend and backend)",
+        content: "Was assigned to be a team lead for a volunteer web-app project. Practiced assign tasks to a team (frontend and backend)",
         timestamp: "2025-06-11 10:05:00",
         image: day11
     },
@@ -307,6 +303,12 @@ export const challengeData = [
         content: "Practiced DeleteNode and InsertInSortedList functions in Singly Linked List",
         timestamp: "2025-06-13 9:22:00",
         image: day13
+    },
+    {
+        day: 14,
+        content: "Practiced CheckIfListIsSorted and RemoveDuplicates from a Linked List",
+        timestamp: "2025-06-14 9:00:00",
+        image: day14
     }
 
 ];
@@ -457,5 +459,11 @@ export const video = [
         title: "InsertAtIndex.",
         category: "Singly Linked List",
         src: "https://www.youtube.com/embed/jtvX2VcWw4A"
+    },
+    {
+        id: 4,
+        title: "Search and Move to Front in a Sorted Linked List",
+        category: "Singly Linked List",
+        src:"https://www.youtube.com/embed/1A5Xn2YBeek"
     }
 ];

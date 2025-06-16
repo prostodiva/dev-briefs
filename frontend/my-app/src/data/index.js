@@ -1,4 +1,4 @@
-import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13, day14} from "../assets/images";
+import { day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13, day14, day15} from "../assets/images";
 
 export const navLinks = [
     {
@@ -309,6 +309,12 @@ export const challengeData = [
         content: "Practiced CheckIfListIsSorted and RemoveDuplicates from a Linked List",
         timestamp: "2025-06-14 9:00:00",
         image: day14
+    },
+    {
+        day: 15,
+        content: "Practiced Reverse List with Sliding three pointers && Append two lists",
+        timestamp: "2025-06-15 11:00:00",
+        image: day15
     }
 
 ];
@@ -474,7 +480,7 @@ export const video = [
     },
     {
         id: 5,
-        title: "Insert a Node in a Sorted Linked List",
+        title: "Delete a Node in a Sorted Linked List",
         category: "Singly Linked List",
         src: "https://www.youtube.com/embed/jYcNJff2Iyc"
     },

@@ -471,5 +471,17 @@ export const video = [
         title: "Insert a Node in a Sorted Linked List",
         category: "Singly Linked List",
         src: "https://www.youtube.com/embed/IDblyEv--kc"
+    },
+    {
+        id: 5,
+        title: "Insert a Node in a Sorted Linked List",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/jYcNJff2Iyc"
+    },
+    {
+        id: 6,
+        title: "Check If a Singly Linked List Is Sorted ",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/ppCDmiLTJHw"
     }
 ];

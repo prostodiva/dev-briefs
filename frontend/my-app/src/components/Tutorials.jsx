@@ -1,23 +1,37 @@
 import { useEffect, useRef, useState } from "react";
 import { video } from "../data/index";
-import { getYouTubeThumbnail, getYouTubeVideoId } from "../utils/youtube";
+import { getYouTubeVideoId } from "../utils/youtube";
+
+const thumbnailQualities = [
+    'maxresdefault.jpg',
+    'hqdefault.jpg',
+    'mqdefault.jpg',
+    'default.jpg'
+];
 
 const TutorialsCard = ({ title, category, src }) => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [thumbIndex, setThumbIndex] = useState(0);
     const iframeRef = useRef(null);
     
     const videoId = getYouTubeVideoId(src);
-    const thumbnailUrl = getYouTubeThumbnail(videoId);
+    const thumbnailUrl = videoId
+        ? `https://img.youtube.com/vi/${videoId}/${thumbnailQualities[thumbIndex]}`
+        : null;
 
     const handleClick = () => {
         setIsPlaying(true);
-        // Add a small delay to ensure the iframe is mounted
         setTimeout(() => {
             if (iframeRef.current) {
                 iframeRef.current.requestFullscreen();
             }
         }, 100);
     };
+
+    // Reset thumbnail index if videoId changes
+    useEffect(() => {
+        setThumbIndex(0);
+    }, [videoId]);
 
     return (
         <div className="w-[400px] flex-shrink-0 p-4">
@@ -30,11 +44,20 @@ const TutorialsCard = ({ title, category, src }) => {
                         >
                             {!isPlaying ? (
                                 <>
-                                    <img
-                                        src={thumbnailUrl}
-                                        alt={title}
-                                        className="absolute inset-0 w-full h-full object-cover"
-                                    />
+                                    {thumbnailUrl ? (
+                                        <img
+                                            src={thumbnailUrl}
+                                            alt={title}
+                                            className="absolute inset-0 w-full h-full object-cover"
+                                            onError={() => {
+                                                if (thumbIndex < thumbnailQualities.length - 1) {
+                                                    setThumbIndex(thumbIndex + 1);
+                                                }
+                                            }}
+                                        />
+                                    ) : (
+                                        <div className="absolute inset-0 w-full h-full bg-black" />
+                                    )}
                                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 z-10 flex items-center justify-center">
                                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                             Click to watch

@@ -24,11 +24,21 @@ export const getYouTubeVideoId = (url) => {
 };
 
 /**
- * Generates a YouTube thumbnail URL
+ * Generates a YouTube thumbnail URL with fallback options
  * @param {string} videoId - YouTube video ID
  * @returns {string} - URL for the video's thumbnail
  */
 export const getYouTubeThumbnail = (videoId) => {
     if (!videoId) return null;
-    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    
+    // Try different thumbnail qualities in order of preference
+    const qualities = [
+        'maxresdefault.jpg',  // Highest quality (not always available)
+        'hqdefault.jpg',      // High quality
+        'mqdefault.jpg',      // Medium quality
+        'default.jpg'         // Default quality
+    ];
+    
+    // Return the first available thumbnail URL
+    return `https://img.youtube.com/vi/${videoId}/${qualities[0]}`;
 };

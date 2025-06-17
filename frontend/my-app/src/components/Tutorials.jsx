@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { video } from "../data/index";
+import { video, whiteBoard } from "../data/index";
 import { getYouTubeVideoId } from "../utils/youtube";
 
 const thumbnailQualities = [
@@ -9,7 +9,7 @@ const thumbnailQualities = [
     'default.jpg'
 ];
 
-const TutorialsCard = ({ title, category, src }) => {
+const TutorialsCard = ({ title,  src }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [thumbIndex, setThumbIndex] = useState(0);
     const iframeRef = useRef(null);
@@ -115,7 +115,7 @@ const Tutorials = () => {
         <section className="py-12 bg-gray-50">
             <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-8 mt-16">Video Tutorials</h2>
-                <h3 className="text-xl font-light text-center">Data Structures</h3>
+                <h3 className="text-xl font-light text-center">Singly Linked List</h3>
                 <div 
                     ref={scrollContainerRef}
                     className="overflow-x-auto pb-4 scrollbar-hide"
@@ -124,6 +124,19 @@ const Tutorials = () => {
                     <div className="flex gap-6 px-4">
                         {video.map((video) => (
                             <TutorialsCard key={video.id} {...video} />
+                        ))}
+                    </div>
+                </div>
+
+                <h3 className="text-xl font-light text-center">Whiteboard Interview Practice</h3>
+                <div
+                    ref={scrollContainerRef}
+                    className="overflow-x-auto pb-4 scrollbar-hide"
+                    style={{ scrollBehavior: 'smooth' }}
+                >
+                    <div className="flex gap-6 px-4">
+                        {whiteBoard.map((whiteBoard) => (
+                            <TutorialsCard key={whiteBoard.id} {...whiteBoard} />
                         ))}
                     </div>
                 </div>

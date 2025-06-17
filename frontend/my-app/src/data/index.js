@@ -491,3 +491,24 @@ export const video = [
         src: "https://www.youtube.com/embed/ppCDmiLTJHw"
     }
 ];
+
+export const whiteBoard = [
+    {
+        id: 1,
+        title: "InsertAtFront, PrintList.",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/hOZT8kxD_OU"
+    },
+    {
+        id: 2,
+        title: "InsertAtBack, ReverseList.",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/hOZT8kxD_OU"
+    },
+    {
+        id: 3,
+        title: "InsertAtIndex.",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/hOZT8kxD_OU"
+    }
+    ];

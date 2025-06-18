@@ -1,4 +1,4 @@
-import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9 } from "../assets/images";
+import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -315,6 +315,12 @@ export const challengeData = [
         content: "Practiced Reverse List with Sliding three pointers && Append two lists",
         timestamp: "2025-06-15 11:00:00",
         image: day15
+    },
+    {
+        day: 16,
+        content: "Whiteboard Interview Practice",
+        timestamp: "2025-06-17 11:00:00",
+        image: day16
     }
 
 ];

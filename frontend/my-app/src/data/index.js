@@ -501,20 +501,26 @@ export const video = [
 export const whiteBoard = [
     {
         id: 1,
-        title: "InsertAtFront, PrintList.",
-        category: "Singly Linked List",
+        title: "Whiteboard Interview Practice: Singly Linked List in C++ | Insert Front, Insert End, and Print",
+        category: "Whiteboard",
         src: "https://www.youtube.com/embed/hOZT8kxD_OU"
     },
     {
         id: 2,
-        title: "InsertAtBack, ReverseList.",
-        category: "Singly Linked List",
-        src: "https://www.youtube.com/embed/hOZT8kxD_OU"
+        title: "Reverse a Singly Linked List in C++ | Sliding Pointers Technique Explained",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/_QiePSgqr3w"
     },
     {
         id: 3,
         title: "InsertAtIndex.",
-        category: "Singly Linked List",
-        src: "https://www.youtube.com/embed/hOZT8kxD_OU"
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/im0p1v6uwBM"
+    },
+    {
+        id: 4,
+        title: "Whiteboard Interview Practice: Delete Node from Front & Specific Position | Singly Linked List in C++",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/NQVGv9pl1LA"
     }
     ];

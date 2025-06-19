@@ -321,7 +321,22 @@ export const challengeData = [
         content: "Whiteboard Interview Practice",
         timestamp: "2025-06-17 11:00:00",
         image: day16
-    }
+    },
+    {
+        day: 17,
+        content: "Whiteboard Interview Practice",
+        timestamp: "2025-06-18 10:00:00",
+    },
+    {
+        day: 18,
+        content: "Whiteboard Interview Practice(Find min/max\n" +
+            "Check if list is sorted\n" +
+            "Insert in Sorted List\n" +
+            "Remove dublicates from sorted linked list(check for false)\n" +
+            "Append two lists\n" +
+            "Search a Key and move at front)",
+        timestamp: "2025-06-19 10:00:00",
+    },
 
 ];
 

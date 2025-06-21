@@ -1,4 +1,4 @@
-import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19 } from "../assets/images";
+import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20 } from "../assets/images";
 
 export const navLinks = [
     {
@@ -343,7 +343,12 @@ export const challengeData = [
         timestamp: "2025-06-19 10:00:00",
         image: day19
     },
-
+    {
+        day: 20,
+        content: "Practice get Intersection Node (Singly-linked List). LeetCodeProblem",
+        timestamp: "2025-06-19 10:00:00",
+        image: day20
+    }
 ];
 
 export const tips = [

@@ -566,6 +566,11 @@ export const whiteBoard = [
         title: "Whiteboard Interview Practice: Find Min/Max in a Singly-Linked List",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/XX45rK0DrNE"
+    },
+    {
+        id: 4,
+        title: "Whiteboard Interview Practice: Insert a Node into a Sorted Singly Linked List",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/XHG-1XNkAiSY"
     }
-
     ];

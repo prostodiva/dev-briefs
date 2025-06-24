@@ -1,4 +1,4 @@
-import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21 } from "../assets/images";
+import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22} from "../assets/images";
 
 export const navLinks = [
     {
@@ -354,6 +354,12 @@ export const challengeData = [
         content: "Practice the difference between remove dups in sorted vs unsorted lists.",
         timestamp: "2025-06-21 10:00:00",
         image: day21
+    },
+    {
+        day: 22,
+        content: "Practice whiteboard interview questions",
+        timestamp: "2025-06-23 10:00:00",
+        image: day22
     }
 ];
 
@@ -554,5 +560,12 @@ export const whiteBoard = [
         title: "Whiteboard Interview Practice: Delete Node from Front & Specific Position | Singly Linked List in C++",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/NQVGv9pl1LA"
+    },
+    {
+        id: 4,
+        title: "Whiteboard Interview Practice: Find Min/Max in a Singly-Linked List",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/XX45rK0DrNE"
     }
+
     ];

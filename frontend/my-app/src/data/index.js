@@ -562,15 +562,21 @@ export const whiteBoard = [
         src: "https://www.youtube.com/embed/NQVGv9pl1LA"
     },
     {
-        id: 4,
+        id: 5,
         title: "Whiteboard Interview Practice: Find Min/Max in a Singly-Linked List",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/XX45rK0DrNE"
     },
     {
-        id: 4,
+        id: 6,
         title: "Whiteboard Interview Practice: Insert a Node into a Sorted Singly Linked List",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/XHG-1XNkAiSY"
+    },
+    {
+        id: 7,
+        title: "Whiteboard Interview Practice: Search & Move-to-Front in a Singly Linked List (C++)",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/sOs3pU-HsLU"
     }
     ];

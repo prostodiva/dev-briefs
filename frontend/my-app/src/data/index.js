@@ -578,5 +578,35 @@ export const whiteBoard = [
         title: "Whiteboard Interview Practice: Search & Move-to-Front in a Singly Linked List (C++)",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/sOs3pU-HsLU"
+    },
+    {
+        id: 8,
+        title: "Whiteboard Interview Practice: Check if a Singly Linked List is Sorted (C++)",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/8nVMgUOQq-4"
+    },
+    {
+        id: 9,
+        title: "Whiteboard Interview Practice: Append Two Singly Linked Lists in C++",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/AhwBObNCODw"
+    },
+    {
+        id: 10,
+        title: "Whiteboard Interview Practice: Merge Two Unsorted Singly Linked Lists in C++",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/whU-LsN8qMI"
+    },
+    {
+        id: 11,
+        title: "Whiteboard Interview Practice: Detect a Loop in a Singly Linked List (C++)",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/TIHFvg05O7M"
+    },
+    {
+        id: 11,
+        title: "Whiteboard Interview Practice: Find the Intersection Node of Two Singly Linked Lists (C++)",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/X0bBqSXQgqQ"
     }
     ];

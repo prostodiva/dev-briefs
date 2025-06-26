@@ -10,6 +10,7 @@ import QuickTips from './pages/QuickTips';
 import QuizzesPage from "./pages/QuizzesPage.jsx";
 import SubscribePage from "./pages/SubscribePage.jsx";
 import TutorialsPage from "./pages/TutorialsPage.jsx";
+import InterviewRecPage from "./pages/InterviewRecPage";
 
 const AppRoutes = () => {
     return (
@@ -26,6 +27,7 @@ const AppRoutes = () => {
                 <Route path="/quizzes" element={<QuizzesPage />} />
                 <Route path="/challenge" element={<ChallengePage />} />
                 <Route path="/card" element={<CardPage />} />
+                <Route path="/recordings" element={<InterviewRecPage />} />
             </Routes>
         </Layout>
     );

@@ -1,6 +1,5 @@
 import BackendCard from "../components/BackendCard.jsx";
 import DataStrCard from "../components/DataStrCard.jsx";
-import Navbar from "../components/Navbar.jsx";
 import Layout from "../components/Layout.jsx";
 
 const CardPage = () => {

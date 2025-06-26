@@ -1,4 +1,4 @@
-import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22} from "../assets/images";
+import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23} from "../assets/images";
 
 export const navLinks = [
     {
@@ -360,6 +360,12 @@ export const challengeData = [
         content: "Practice whiteboard interview questions",
         timestamp: "2025-06-23 10:00:00",
         image: day22
+    },
+    {
+        day: 23,
+        content: "Practice str reversal && simple calc impl. in C++",
+        timestamp: "2025-06-26 10:00:00",
+        image: day23
     }
 ];
 
@@ -604,7 +610,7 @@ export const whiteBoard = [
         src: "https://www.youtube.com/embed/TIHFvg05O7M"
     },
     {
-        id: 11,
+        id: 12,
         title: "Whiteboard Interview Practice: Find the Intersection Node of Two Singly Linked Lists (C++)",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/X0bBqSXQgqQ"

@@ -26,6 +26,8 @@ const PostCard = ({ day, content, timestamp, image }) => {
 
 const Challenge = () => {
     const [currentTime, setCurrentTime] = useState('');
+    const [sortOrder, setSortOrder] = useState('newest'); // 'newest' or 'oldest'
+    const [sortedData, setSortedData] = useState([]);
 
     useEffect(() => {
         const updateTime = () => {
@@ -55,6 +57,18 @@ const Challenge = () => {
         return () => clearInterval(interval);
     }, []);
 
+    // Sort data whenever sortOrder changes
+    useEffect(() => {
+        const sorted = [...challengeData].sort((a, b) => {
+            if (sortOrder === 'oldest') {
+                return a.day - b.day; // Ascending order (1, 2, 3...)
+            } else {
+                return b.day - a.day; // Descending order (23, 22, 21...)
+            }
+        });
+        setSortedData(sorted);
+    }, [sortOrder]);
+
     console.log('Challenge data:', challengeData); // Debug log
 
     return (
@@ -72,10 +86,29 @@ const Challenge = () => {
                         <p>PST Time: {currentTime.pst}</p>
                     </div>
                 </div>
+
+                {/* Sort Filter */}
+                <div className="flex justify-center mb-6">
+                    <div className="flex items-center space-x-3">
+                        <label htmlFor="sortOrder" className="text-sm font-medium text-gray-700">
+                            Sort by:
+                        </label>
+                        <select
+                            id="sortOrder"
+                            value={sortOrder}
+                            onChange={(e) => setSortOrder(e.target.value)}
+                            className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+                        >
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
             </div>
+           
 
             <div className="space-y-4 pb-8">
-                {challengeData.map((post, index) => (
+                {sortedData.map((post, index) => (
                     <PostCard
                         key={index}
                         day={post.day}

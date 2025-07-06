@@ -47,9 +47,10 @@ export const SinglyLLInsertAtFront = [
     "      - print the values",
     "      - update a nullptr when we reached the end of the list(move to the next node)",
     "Main:",
-    "      - create an empty list",
+    "      - create an empty list and initialize it",
     "test the functions:",
-    "      - add values, print result"
+    "      - add values, print result",
+    "      - deallocate the list"
 ];
 
 export const SinglyLLInsertAtFrontCode = [
@@ -74,10 +75,20 @@ export const SinglyLLInsertAtFrontCode = [
     " }",
     " cout << \"nullptr\"<<endl;",
     "}",
+    "void DeleteList(Node*& head) {",
+    "  while(head != nullptr) {",
+    "    Node* temp = head;",
+    "    head = head->next;",
+    "    delete temp;",
+    "  }",
+    "  head = nullptr;  // ← This modifies the original head",
+    "}",
     "int main() {",
     "  Node* singlyLL = nullptr;",
     "  InsertNodeAtFront(singlyLL, 1);",
     "  PrintListForward(singlyLL);",
+    " DeleteList(singlyLL);",
+    "  singlyLL = nullptr;",
     "  return 0;",
     "}"
 ];

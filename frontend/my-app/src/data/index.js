@@ -588,7 +588,7 @@ export const whiteBoard = [
         id: 6,
         title: "Whiteboard Interview Practice: Insert a Node into a Sorted Singly Linked List",
         category: "Whiteboard",
-        src: "https://www.youtube.com/embed/XHG-1XNkAiSY"
+        src: "https://www.youtube.com/embed/HG-1XNkAiSY"
     },
     {
         id: 7,
@@ -625,5 +625,11 @@ export const whiteBoard = [
         title: "Whiteboard Interview Practice: Find the Intersection Node of Two Singly Linked Lists (C++)",
         category: "Whiteboard",
         src: "https://www.youtube.com/embed/X0bBqSXQgqQ"
+    },
+    {
+        id: 13,
+        title: "Remove Duplicates from Sorted Linked List | C++",
+        category: "Whiteboard",
+        src: "https://www.youtube.com/embed/RQrRi0kYgQ4"
     }
     ];

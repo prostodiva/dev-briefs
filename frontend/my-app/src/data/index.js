@@ -1,4 +1,4 @@
-import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23} from "../assets/images";
+import { day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24} from "../assets/images";
 
 export const navLinks = [
     {
@@ -377,6 +377,12 @@ export const challengeData = [
         content: "Practice str reversal && simple calc impl. in C++",
         timestamp: "2025-06-26 10:00:00",
         image: day23
+    },
+    {
+        day: 24,
+        content: "Practice isPalindrome function in Google Docs.",
+        timestamp: "2025-07-09 7:00:00",
+        image: day24
     }
 ];
 

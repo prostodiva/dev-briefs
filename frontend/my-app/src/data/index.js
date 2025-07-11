@@ -556,6 +556,12 @@ export const video = [
         title: "Check If a Singly Linked List Is Sorted ",
         category: "Singly Linked List",
         src: "https://www.youtube.com/embed/ppCDmiLTJHw"
+    },
+    {
+        id: 8,
+        title: "Check if a Singly Linked List Is Palindrome",
+        category: "Singly Linked List",
+        src: "https://www.youtube.com/embed/eU6lU8hErfQ"
     }
 ];
 

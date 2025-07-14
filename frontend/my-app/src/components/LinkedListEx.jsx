@@ -10,6 +10,90 @@ function shuffle(array) {
     return arr;
 }
 
+// Function to group lines that should be treated together (e.g., closing braces)
+function groupLines(lines) {
+    const groups = [];
+    let currentGroup = [];
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const trimmedLine = line.trim();
+        
+        // If line starts with just a closing brace, add it to the previous group
+        if (trimmedLine === '}' || trimmedLine.startsWith('}')) {
+            if (currentGroup.length > 0) {
+                currentGroup.push(line);
+            } else {
+                // If no previous group, create a new one
+                groups.push([line]);
+            }
+        } else {
+            // If we have a current group, finalize it
+            if (currentGroup.length > 0) {
+                groups.push(currentGroup);
+            }
+            // Start a new group
+            currentGroup = [line];
+        }
+    }
+    
+    // Don't forget the last group
+    if (currentGroup.length > 0) {
+        groups.push(currentGroup);
+    }
+    
+    return groups;
+}
+
+// Function to flatten groups back to lines
+function flattenGroups(groups) {
+    return groups.flat();
+}
+
+// Function to compare grouped lines
+function compareGroupedLines(lines1, lines2) {
+    const groups1 = groupLines(lines1);
+    const groups2 = groupLines(lines2);
+    
+    if (groups1.length !== groups2.length) return false;
+    
+    for (let i = 0; i < groups1.length; i++) {
+        const group1 = groups1[i];
+        const group2 = groups2[i];
+        
+        if (group1.length !== group2.length) return false;
+        
+        for (let j = 0; j < group1.length; j++) {
+            if (group1[j] !== group2[j]) return false;
+        }
+    }
+    
+    return true;
+}
+
+function compareWithFlexibleBraces(userLines, correctLines) {
+    let i = 0, j = 0;
+    while (i < userLines.length && j < correctLines.length) {
+        // If both are standalone closing braces
+        if (userLines[i].trim() === '}' && correctLines[j].trim() === '}') {
+            // Count consecutive } in both
+            let userCount = 0, correctCount = 0;
+            while (userLines[i + userCount] && userLines[i + userCount].trim() === '}') userCount++;
+            while (correctLines[j + correctCount] && correctLines[j + correctCount].trim() === '}') correctCount++;
+            if (userCount !== correctCount) return false;
+            i += userCount;
+            j += correctCount;
+        } else {
+            // Compare lines as usual
+            if (userLines[i].trim() !== correctLines[j].trim()) return false;
+            i++;
+            j++;
+        }
+    }
+    // Both arrays should be fully traversed
+    return i === userLines.length && j === correctLines.length;
+}
+
 const ExerciseNavigation = ({ exercises, activeExercise, onExerciseSelect }) => {
     return (
         <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
@@ -191,7 +275,11 @@ const LinkedListEx = () => {
     };
 
     const handleShuffle = () => {
-        const shuffledLines = shuffle(currentExercise.data);
+        // Group the lines first, then shuffle the groups
+        const groups = groupLines(currentExercise.data);
+        const shuffledGroups = shuffle(groups);
+        const shuffledLines = flattenGroups(shuffledGroups);
+        
         setExerciseStates(prev => {
             const newStates = new Map(prev);
             newStates.set(currentExercise.id, {
@@ -217,7 +305,7 @@ const LinkedListEx = () => {
         });
     };
 
-    const isCorrect = currentState.shuffled && JSON.stringify(currentState.shuffledLines) === JSON.stringify(currentExercise.data);
+    const isCorrect = currentState.shuffled && compareWithFlexibleBraces(currentState.shuffledLines, currentExercise.data);
 
     return (
         <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10 mt-16">

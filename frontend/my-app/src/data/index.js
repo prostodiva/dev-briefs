@@ -72,7 +72,7 @@ export const SinglyLLInsertAtFrontCode = [
     "  newNode->next = head;",
     "  head = newNode;",
     "}",
-    "void PrintListForward(Node*& head) {",
+    "void PrintListForward(Node* head) {",
     " Node* temp = head;",
     " while (temp != nullptr) {",
     "   cout <<temp->data << \" -> \";",
@@ -93,7 +93,6 @@ export const SinglyLLInsertAtFrontCode = [
     "  InsertNodeAtFront(singlyLL, 1);",
     "  PrintListForward(singlyLL);",
     "  DeleteList(singlyLL);",
-    "  singlyLL = nullptr;",
     "  return 0;",
     "}"
 ];
@@ -106,7 +105,7 @@ export const SinglyLLInsertAtEnd = [
     "      - check if the list is empty",
     "      - if true, make a new Node the head, return",
     "      - if not, make a temp pointer to traverse the list from head",
-    "      - loop through the list until it hit nullptr",
+    "      - loop through the list until it hits nullptr",
     "      - move to the next node",
     "      - assign the last node next with nullptr",
     "PrintListForward:",
@@ -115,21 +114,24 @@ export const SinglyLLInsertAtEnd = [
     "      - print the values",
     "      - update a nullptr when we reached the end of the list(move to the next node)",
     "ReverseList:",
-   "       - create a temp pointer",
-   "       - assign the pointer with the same address as a head",
-   "       - create prev and next pointers, assign with nullptr",
-   "       - traverse the list while temp != nullptr",
-   "       - assign next with pointer of temp",
-   "       - assign prev with pointer of temp",
-   "       - make prev a new head(point to nullptr)",
-   "       - traverse the list again(opposite direction) until tem != nullptr",
-   "       - print the data value",
-   "       - move temp to the next node",
+   "       - create a next pointer, assign with a head",
+   "       - create prev and temp pointers, assign with nullptr",
+   "       - traverse the list while next != nullptr",
+   "       - move three pointers forward",
+   "       - relink the middle pointer - reverse (temp->next to prev)",
+   "       - make temp a new head",
+    "      - traverse again(in opposite direction using temp)",
+    "      - print the values",
+    "DeleteList:",
+    "      - traverse head till the end",
+    "      - create temp pointer, assign with a head",
+    "      - move head forward",
+    "      - delete temp",
+    "      - update head with nullptr",
     "main:",
-    "Test the functions in main:",
     "Create an empty list in main",
     "      add values from the end, print result, reverse, print again",
-    "DeleteList",
+    "DeleteList"
 ];
 
 export const SinglyLLInsertAtEndCode = [
@@ -155,7 +157,7 @@ export const SinglyLLInsertAtEndCode = [
     "    temp->next = newNode;",
     "  }",
     "}",
-    "void PrintListForward(Node*& head) {",
+    "void PrintListForward(Node* head) {",
     " Node* temp = head;",
     " while (temp != nullptr) {",
     "   cout <<temp->data << \" -> \";",
@@ -163,17 +165,17 @@ export const SinglyLLInsertAtEndCode = [
     " }",
     " cout << \"nullptr\"<<endl;",
     "}",
-    "void PrintListBackwards(Node*& head) {",
-    "  Node* temp = head;",
+    "void PrintListBackwards(Node* head) {",
+    "  Node* next = head;",
     "  Node* prev = nullptr;",
-    "  Node* next = nullptr;",
-    "  while (temp != nullptr) {",
-    "    next = temp->next;",
-    "    temp->next = prev;",
+    "  Node* temp = nullptr;",
+    "  while (next != nullptr) {",
     "    prev = temp;",
     "    temp = next;",
+    "    next = next->next;",
+    "    temp->next = prev",
     "  }",
-    "  temp = prev;",
+    "  head = temp;",
     "  while (temp != nullptr) {",
     "    cout << temp->data << \" -> \";",
     "    temp = temp->next;",
@@ -234,22 +236,156 @@ export const SinglyLLInsertAtIndexCode = [
 "}"
 ];
 
-export const SinglyLLDisplayRecursively = [
-    "void DisplayForward(Node*& head) {",
-    "  Node* temp = head;",
-    "  if (temp != nullptr) {",
-    "    cout << temp->data << \" -> \";",
-    "    DisplayForward(temp->next);",
-    "  }",
+export const FindMinMaxPseudocode = [
+    "1.Find max:",
+    " - create a reference variable x with min int value: -32687",
+    " - 1.create temp pointer, assign with a head",
+    " - 1.traverse temp through the list until the end",
+    " - if temp->data > x, assign x with a new value",
+    " - 1.if not, move temp to the next node",
+    " - 1.print x",
+    "2.Find min:",
+    " - create a reference variable x with max int value: 32687",
+    " - 2.create temp pointer, assign with a head",
+    " - 2.traverse temp through the list until the end",
+    " - if temp->data < x, assign x with a new value",
+    " - 2.if not, move temp to the next node",
+    " - 2.print x",
+];
+
+export const FindMinMaxCode = [
+    "void FindMax(Node* head) { ",
+    "   int x = -32687;",
+    "   Node* temp = head;      //first func",
+    "   while(temp != nullptr) {    //first func",
+        "   if (temp->data > x) {",
+        "       x = temp->data;     //first func",
+        "   }",
+        "temp = temp->next;     //first func",
+    "   }",
+    "   cout << x <<endl;       //first func",
     "}",
-    "void DisplayReversed(Node*& head) {",
-    "  Node* temp = head;",
-    "  if (temp != nullptr) {",
-    "    DisplayReversed(temp->next);",
-    "    cout << temp->data << \" -> \";",
-    "  }",
+    "void FindMin(Node* head) {",
+    "   int x = 32687;",
+    "   Node* temp = head;",
+    "   while(temp != nullptr) {",
+    "   if (temp->data < x) {",
+    "       x = temp->data;",
+    "   }",
+    "temp = temp->next;",
+    "   }",
+    "   cout << x <<endl;",
     "}"
 ];
+
+export const InsertInSortedListPseudocode = [
+    "InsertInSortedList In Sorted position:",
+    "if the list is empty, insertAtFront, return",
+    "handle the case if key is less than data in the first node:" +
+    "   - InsertAtFront, return",
+    "otherwise:",
+    "   - create two pointers: prev(start with nullptr), temp(start with head)",
+    "   - traverse the list with temp until the end && temp->data < key",
+    "   - move both pointers forward",
+    "at this point we found the correct position to insert a new node",
+    "   - create a new node",
+    "   - connect prev's next with new Node",
+    "   - connect new Node's next with temp's",
+];
+
+export const InsertInSortedListCode = [
+    "void InsertInSortedList(Node*& head, int key) {\n",
+    "  if (head == nullptr) {\n",
+    "    InsertAtFront(head, key); return; //1",
+    "  }\n",
+    "  if (key < temp->data) {\n",
+    "    InsertAtFront(head, key); return;\n",
+    "  }\n",
+    "  Node* prev = nullptr;\n",
+    "  Node* temp = head;\n",
+    "  while (temp != nullptr && temp->data < key) {\n",
+    "    prev = temp;\n",
+    "    temp = temp->next;\n",
+    "  }\n",
+    "  Node* newNode = new Node(key);\n",
+    "  prev->next = newNode;\n",
+    "  newNode->next = temp;\n",
+    "}"
+];
+
+export const SearchKeyAndMovePseudocode = [
+
+];
+
+export const SearchKeyAndMoveCode = [
+
+];
+
+export const DeleteNodePseudocode = [
+
+];
+
+export const DeleteNodeCode = [
+
+];
+
+export const CheckIfSortedPseudocode = [
+
+];
+
+export const CheckIfInsertedCode = [
+
+];
+
+export const RemoveDuplicatedFromSortedListPseudocode = [
+
+];
+
+export const RemoveDuplicatedFromSortedCode = [
+
+];
+
+export const RemoveDuplicatedFromUnSortedListPseudocode = [
+
+];
+
+export const RemoveDuplicatedFromUnSortedCode = [
+
+];
+
+export const DetectALoopPseudocode = [];
+export const DetectALoopCode = [];
+
+export const SumListPseudocode = [];
+export const SumListCode = [];
+
+export const FindMiddlePseudocode = [];
+export const FindMiddleCodeCode = [];
+
+export const AppendListsPseudocode = [
+
+];
+
+export const AppendListCode = [
+
+];
+
+export const MergeSortedListPseudocode = [
+
+];
+
+export const MergeSortedListsCode = [
+
+];
+
+export const GetIntersectionNodePseudocode = [];
+
+export const GetIntersectionNodeCode = [];
+
+export const IsPalindromePseudocode = [];
+
+export const IsPalindromeCode = [];
+
 
 export const challengeData = [
     {
@@ -487,28 +623,28 @@ export const questions = [
 export const exercises = [
     {
         id: 1,
-        title: "InsertAtFront/Display Pseudocode Exercise",
+        title: "PushAtFront/PrintList/DeleteList Pseudocode Exercise",
         description: "Create and Display Singly Linked List. Insert Nodes At Front.",
         type: "pseudocode",
         data: SinglyLLInsertAtFront
     },
     {
         id: 2,
-        title: "InsertAtFront/Display Code Exercise",
+        title: "PushAtFront/PrintList/DeleteList Code Exercise",
         description: "Create and Display Singly Linked List. Insert Nodes At Front.",
         type: "code",
         data: SinglyLLInsertAtFrontCode
     },
     {
         id: 3,
-        title: "InsertAtEnd/Reverse Pseudocode Exercise",
+        title: "PushBack/Reverse Pseudocode Exercise",
         description: "Insert Node At End of Linked List and display in reverse order",
         type: "pseudocode",
         data: SinglyLLInsertAtEnd
     },
     {
         id: 4,
-        title: "InsertAtEnd/Reverse Code Exercise",
+        title: "PushBack/Reverse Code Exercise",
         description: "Insert Node At End of Linked List and display in reverse order",
         type: "code",
         data: SinglyLLInsertAtEndCode
@@ -529,10 +665,32 @@ export const exercises = [
     },
     {
         id: 7,
-        title: "Display Linked List forward and in reversed order, using recursion",
+        title: "FindMax/Min Pseudocode Exercise",
+        description: "FindMax/Min Pseudocode Exercise",
+        type: "pseudocode",
+        data: FindMinMaxPseudocode
+    },
+    {
+        id: 8,
+        title: "FindMax/Min code Exercise",
+        description: "FindMax/Min code Exercise",
         type: "code",
-        data: SinglyLLDisplayRecursively
-    }
+        data: FindMinMaxCode
+    },
+    {
+        id: 9,
+        title: "InsertInSortedList Pseudocode Exercise",
+        description: "InsertInSortedList in Sorted Position",
+        type: "pseudocode",
+        data: InsertInSortedListPseudocode
+    },
+    {
+        id: 10,
+        title: "InsertInSortedList in Sorted Position Code Exercise",
+        description: "InsertInSortedList in Sorted Position Code Exercise",
+        type: "code",
+        data: InsertInSortedListCode
+    },
 ];
 
 export const video = [

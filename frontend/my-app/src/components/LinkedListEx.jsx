@@ -50,26 +50,6 @@ function flattenGroups(groups) {
     return groups.flat();
 }
 
-// Function to compare grouped lines
-function compareGroupedLines(lines1, lines2) {
-    const groups1 = groupLines(lines1);
-    const groups2 = groupLines(lines2);
-    
-    if (groups1.length !== groups2.length) return false;
-    
-    for (let i = 0; i < groups1.length; i++) {
-        const group1 = groups1[i];
-        const group2 = groups2[i];
-        
-        if (group1.length !== group2.length) return false;
-        
-        for (let j = 0; j < group1.length; j++) {
-            if (group1[j] !== group2[j]) return false;
-        }
-    }
-    
-    return true;
-}
 
 function compareWithFlexibleBraces(userLines, correctLines) {
     let i = 0, j = 0;
@@ -103,7 +83,7 @@ const ExerciseNavigation = ({ exercises, activeExercise, onExerciseSelect }) => 
                     onClick={() => onExerciseSelect(exercise.id)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                         activeExercise === exercise.id
-                            ? 'bg-blue-600 text-white'
+                            ? 'bg-gray-600 text-white'
                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                 >
@@ -132,7 +112,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
                         ))}
                     </ul>
                     <button
-                        className="mt-1 px-2 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+                        className="mt-1 px-2 py-1 bg-gray-800 text-white rounded hover:bg-gray-600 text-sm"
                         onClick={onShuffle}
                     >
                         Shuffle
@@ -144,7 +124,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
                         {lines.map((line, idx) => (
                             <li
                                 key={idx}
-                                className="p-1.5 my-0.5 bg-green-100 border border-green-300 rounded font-mono text-sm"
+                                className="p-1.5 my-0.5 bg-green-100 border border-green-300 rounded font-jetbrains text-sm"
                             >
                                 {line}
                             </li>
@@ -168,7 +148,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
                                 onDragOver={handleDragOver}
                                 onDrop={(e) => handleDrop(e, idx)}
                                 onDragEnd={handleDragEnd}
-                                className={`p-1.5 border rounded font-mono cursor-move transition-all duration-200 hover:shadow-md text-sm ${
+                                className={`p-1.5 border rounded font-jetbrains cursor-move transition-all duration-200 hover:shadow-md text-sm ${
                                     selected === idx 
                                         ? 'bg-blue-100 border-blue-300 shadow-lg scale-[1.02]' 
                                         : 'bg-gray-100 border-gray-300 hover:bg-gray-50'

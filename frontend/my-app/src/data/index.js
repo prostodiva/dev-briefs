@@ -39,16 +39,21 @@ export const SinglyLLInsertAtFront = [
     "create struct Node: data, next, constructor(assign data with value, next to nullptr)",
     "InsertNodeAtFront:",
     "      - create a newNode",
-    "      - Point newNode's next to head\n",
-    "      - Update head to point to newNode",
+    "      - point newNode's next to head",
+    "      - update head to point to newNode",
     "PrintList:",
     "      - create a temp pointer to traverse the list from head",
-    "      - traverse the list until temp hit nullptr",
+    "      - traverse the list until temp hits nullptr",
     "      - print the values",
-    "      - update a nullptr when we reached the end of the list(move to the next node)",
+    "      - move temp pointer forward",
+    "DeleteList:",
+    "      - traverse head till the end",
+    "      - create temp pointer, assign with a head",
+    "      - move head forward",
+    "      - delete temp",
+    "      - update head with nullptr",
     "Main:",
-    "      - create an empty list and initialize it",
-    "test the functions:",
+    "      - create an empty list and initialize it with nullptr",
     "      - add values, print result",
     "      - deallocate the list"
 ];
@@ -87,7 +92,7 @@ export const SinglyLLInsertAtFrontCode = [
     "  Node* singlyLL = nullptr;",
     "  InsertNodeAtFront(singlyLL, 1);",
     "  PrintListForward(singlyLL);",
-    " DeleteList(singlyLL);",
+    "  DeleteList(singlyLL);",
     "  singlyLL = nullptr;",
     "  return 0;",
     "}"
@@ -121,9 +126,10 @@ export const SinglyLLInsertAtEnd = [
    "       - print the data value",
    "       - move temp to the next node",
     "main:",
-    "test the functions in main:",
-    "create an empty list in main",
-    "      add values from the end, print result, reverse, print again"
+    "Test the functions in main:",
+    "Create an empty list in main",
+    "      add values from the end, print result, reverse, print again",
+    "DeleteList",
 ];
 
 export const SinglyLLInsertAtEndCode = [
@@ -174,6 +180,14 @@ export const SinglyLLInsertAtEndCode = [
     "  }",
     "  cout << \"nullptr\" << endl;",
     "}",
+    "void DeleteList(Node*& head) {",
+    "  while(head != nullptr) {",
+    "    Node* temp = head;",
+    "    head = head->next;",
+    "    delete temp;",
+    "  }",
+    "  head = nullptr;  // ← This modifies the original head",
+    "}",
     "int main() {",
     "  Node* singlyLL = nullptr;",
     "  InsertNodeAtFront(singlyLL, 1);",
@@ -182,13 +196,14 @@ export const SinglyLLInsertAtEndCode = [
     "  PrintListForward(singlyLL);",
     "  InsertNodeAtEnd(singlyLL, 5);",
     "  PrintListBackwards(singlyLL);",
+    "  DeleteList(singlyLL);",
     "  return 0;",
     "}"
 ];
 
 export const SinglyLLInsertAtIndex = [
 "InsertAtIndex:",
-"    - if index < 0 - return. Don't work with negative indices",
+"    - if index < 0 - return. Don't work with negative indexes",
 "    - if index == 0 - call InsertAtFront and return",
 "    - create temp node and set it to head",
 "    - traverse through the linked List until we hit the node BEFORE the provided index(use a counter to track position)",

@@ -130,6 +130,7 @@ const LinkedListEx = () => {
         exercises.forEach(exercise => {
             states.set(exercise.id, {
                 lines: exercise.data,
+                shuffledLines: exercise.data, // Store shuffled lines separately
                 selected: null,
                 shuffled: false,
                 showCorrect: false
@@ -171,6 +172,7 @@ const LinkedListEx = () => {
             newStates.set(currentExercise.id, {
                 ...currentState,
                 lines: newLines,
+                shuffledLines: newLines, // Update shuffled lines when user reorders
                 selected: null
             });
             return newStates;
@@ -189,11 +191,13 @@ const LinkedListEx = () => {
     };
 
     const handleShuffle = () => {
+        const shuffledLines = shuffle(currentExercise.data);
         setExerciseStates(prev => {
             const newStates = new Map(prev);
             newStates.set(currentExercise.id, {
                 ...currentState,
-                lines: shuffle(currentExercise.data),
+                lines: shuffledLines,
+                shuffledLines: shuffledLines,
                 shuffled: true
             });
             return newStates;
@@ -205,13 +209,15 @@ const LinkedListEx = () => {
             const newStates = new Map(prev);
             newStates.set(currentExercise.id, {
                 ...currentState,
-                showCorrect: show
+                showCorrect: show,
+                // When showing correct order, show the correct order, otherwise show shuffled lines
+                lines: show ? currentExercise.data : currentState.shuffledLines
             });
             return newStates;
         });
     };
 
-    const isCorrect = JSON.stringify(currentState.lines) === JSON.stringify(currentExercise.data);
+    const isCorrect = currentState.shuffled && JSON.stringify(currentState.shuffledLines) === JSON.stringify(currentExercise.data);
 
     return (
         <div className="max-w-3xl mx-auto p-3 bg-white rounded-lg shadow-lg border border-gray-200 relative z-10 mt-16">

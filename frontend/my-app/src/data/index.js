@@ -314,11 +314,33 @@ export const InsertInSortedListCode = [
 ];
 
 export const SearchKeyAndMovePseudocode = [
-
+    "SearchKeyAndMove:",
+    "   check if the list is empty",
+    "   - create two pointers(prev, temp)",
+    "   - traverse through the list with temp",
+    "   if the key is found:",
+    "       - relink prev's next to temp's next",
+    "       - relink temp's next to head(making this node a new head)",
+    "   otherwise: - move both pointers forward",
+    "   return head"
 ];
 
 export const SearchKeyAndMoveCode = [
-
+    "Node* SearchKeyAndMove(Node*& head, int key) {",
+    "   if (head == nullptr) return nullptr;",
+    "   Node* temp = head;",
+    "   Node* prev = nullptr",
+    "   while(temp != nullptr) {",
+    "       if (key == temp->data) {",
+    "           prev->next = temp->next;",
+    "           temp->next = head;",
+    "           head = temp;",
+    "       }",
+            "prev = temp;",
+            "temp = temp->next;",
+    "   }",
+    "   return head;",
+    "}",
 ];
 
 export const DeleteNodePseudocode = [
@@ -690,6 +712,20 @@ export const exercises = [
         description: "InsertInSortedList in Sorted Position Code Exercise",
         type: "code",
         data: InsertInSortedListCode
+    },
+    {
+        id: 11,
+        title: "SearchKeyAndMove Pseudocode Exercise",
+        description: "SearchKeyAndMove Pseudocode Exercise",
+        type: "pseudocode",
+        data: SearchKeyAndMovePseudocode
+    },
+    {
+        id: 12,
+        title: "SearchKeyAndMove Code Exercise",
+        description: "SearchKeyAndMove to the front Code  Exercise",
+        type: "code",
+        data: SearchKeyAndMoveCode
     },
 ];
 

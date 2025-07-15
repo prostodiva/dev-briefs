@@ -344,11 +344,42 @@ export const SearchKeyAndMoveCode = [
 ];
 
 export const DeleteNodePseudocode = [
-
+    "DeleteNode:",
+    "   - create two pointers(prev, temp)",
+    "create a flag to track if the deletion was occurred(-1)",
+    "check if the list is empty",
+    "check if it is first node to delete(pos 1)",
+    "move head, save value, delete temp",
+    "deleteAtPosition: use for loop to find the place",
+    "move pointers forward",
+    "if temp is not at the end:",
+    "- relink prev's next",
+    "- save data",
+    "delete temp",
+    "return saved value"
 ];
 
 export const DeleteNodeCode = [
-
+    "int DeleteNode(Node*& head, int position) {",
+    "   Node* prev = nullptr;",
+    "   Node* temp = head;",
+    "   int x = -1;",
+    "   if (head == nullptr) return x;",
+    "   if (position == 1) {",
+    "       head = head->next;",
+    "       x = temp->data;",
+    "       delete temp;",
+    "   }",
+    "   for (int i = 0; i < position - 1; i++) {",
+    "       prev = temp;",
+    "       temp = temp->next;",
+    "   }",
+    "   prev->next = temp->next;",
+    "   x = temp->data;",
+    "   delete temp;",
+    "}",
+    "return x;",
+    "}"
 ];
 
 export const CheckIfSortedPseudocode = [
@@ -732,6 +763,20 @@ export const exercises = [
         description: "SearchKeyAndMove to the front Code  Exercise",
         type: "code",
         data: SearchKeyAndMoveCode
+    },
+    {
+        id: 13,
+        title: "DeleteNode Pseudocode Exercise",
+        description: "DeleteNodeFromFront and AtPosition Pseudocode Exercise",
+        type: "pseudocode",
+        data: DeleteNodePseudocode
+    },
+    {
+        id: 14,
+        title: "DeleteNode Code Exercise",
+        description: "DeleteNodeFromFront and AtPosition Code  Exercise",
+        type: "code",
+        data: DeleteNodeCode
     },
 ];
 

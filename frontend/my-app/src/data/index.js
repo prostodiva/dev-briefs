@@ -238,14 +238,14 @@ export const SinglyLLInsertAtIndexCode = [
 
 export const FindMinMaxPseudocode = [
     "1.Find max:",
-    " - create a reference variable x with min int value: -32687",
+    " - create a reference variable x with min int value: -32768",
     " - 1.create temp pointer, assign with a head",
     " - 1.traverse temp through the list until the end",
     " - if temp->data > x, assign x with a new value",
     " - 1.if not, move temp to the next node",
     " - 1.print x",
     "2.Find min:",
-    " - create a reference variable x with max int value: 32687",
+    " - create a reference variable x with max int value: 32768",
     " - 2.create temp pointer, assign with a head",
     " - 2.traverse temp through the list until the end",
     " - if temp->data < x, assign x with a new value",
@@ -255,7 +255,7 @@ export const FindMinMaxPseudocode = [
 
 export const FindMinMaxCode = [
     "void FindMax(Node* head) { ",
-    "   int x = -32687;",
+    "   int x = -32768;",
     "   Node* temp = head;      //first func",
     "   while(temp != nullptr) {    //first func",
         "   if (temp->data > x) {",
@@ -266,7 +266,7 @@ export const FindMinMaxCode = [
     "   cout << x <<endl;       //first func",
     "}",
     "void FindMin(Node* head) {",
-    "   int x = 32687;",
+    "   int x = 32768;",
     "   Node* temp = head;",
     "   while(temp != nullptr) {",
     "   if (temp->data < x) {",
@@ -383,11 +383,29 @@ export const DeleteNodeCode = [
 ];
 
 export const CheckIfSortedPseudocode = [
-
+    "CheckIfSorted:",
+    "   - create temp",
+    "   - create reference var(-32768)",
+    "   - traverse through the list with temp",
+    "       - check if data is less than ref var - if so, the list is unsorted",
+    "   - save data into x",
+    "   - move temp forward",
+    "   - return true"
 ];
 
-export const CheckIfInsertedCode = [
-
+export const CheckIfSortedCode = [
+    "bool isSorted(Node* head) {",
+    "   Node* temp = head; ",
+    "   int x = -32768;",
+    "   while (temp != nullptr) {",
+    "       if (temp->data < x) {",
+    "           return false;",
+    "       }",
+    "       x = temp->next;",
+    "       temp = temp->next;",
+        "}",
+    "return true;",
+    "}"
 ];
 
 export const RemoveDuplicatedFromSortedListPseudocode = [
@@ -777,6 +795,20 @@ export const exercises = [
         description: "DeleteNodeFromFront and AtPosition Code  Exercise",
         type: "code",
         data: DeleteNodeCode
+    },
+    {
+        id: 15,
+        title: "CheckIfSorted Pseudocode Exercise",
+        description: "Check if the list is Sorted Pseudocode Exercise",
+        type: "pseudocode",
+        data: CheckIfSortedPseudocode
+    },
+    {
+        id: 16,
+        title: "CheckIfSorted Code Exercise",
+        description: "CheckIfSorted Code  Exercise",
+        type: "code",
+        data: CheckIfSortedCode
     },
 ];
 

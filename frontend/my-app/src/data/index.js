@@ -408,20 +408,70 @@ export const CheckIfSortedCode = [
     "}"
 ];
 
-export const RemoveDuplicatedFromSortedListPseudocode = [
-
+export const RemoveDuplicatesFromSortedListPseudocode = [
+    "RemoveDupsFromSortedList:",
+    "check if list is empty",
+"create two pointers(prev starts from head, temp from head next)",
+"traverse until temp != nullptr",
+"compare the data and move pointers forward if not equal",
+"if equal - delete the second node(relink prev->next to temp->next)",
+"delete temp",
+"reassign temp with prev's next",
+"return head"
 ];
 
-export const RemoveDuplicatedFromSortedCode = [
-
+export const RemoveDuplicatesFromSortedCode = [
+    "Node* RemoveDups(Node*& head) {",
+    "   if (head == nullptr) return nullptr;",
+    "   Node* prev = head;",
+    "   Node* temp = head->next;",
+    "   while (temp != nullptr) {",
+    "       if (prev->data != temp->data) {",
+    "           prev = temp;",
+    "           temp = temp->next;",
+    "       } else {",
+    "           prev->next = temp->next;",
+    "           delete temp;",
+    "           temp = prev->next;",
+    "       }",
+    "   }",
+    "return head",
+    "}"
 ];
 
-export const RemoveDuplicatedFromUnSortedListPseudocode = [
-
+export const RemoveDuplicatesFromUnSortedListPseudocode = [
+    "RemoveDupsFromUnSortedList:",
+    "- check if list is empty",
+    "- create outer pointer, assign with a head",
+    "- traverse outer until the end of the list",
+    "       - create inner pointer, assign with an outer",
+    "       traverse inner->next until the end",
+    "           - compare outer data with inner next data",
+    "               - if equals, create temp, move inner->next, delete temp",
+    "           else: move inner forward",
+    "move outer forward",
+    "return head"
 ];
 
-export const RemoveDuplicatedFromUnSortedCode = [
-
+export const RemoveDuplicatesFromUnSortedCode = [
+    "Node* RemoveDups(Node*& head) {",
+    "   if (head == nullptr) return nullptr;",
+    "   Node* outer = head;",
+    "   while (outer != nullptr) {",
+    "       Node* inner = outer;",
+    "       while (inner->next != nullptr) {",
+    "           if (outer->data == inner->next->data) {",
+    "               Node* temp = inner->next;",
+    "               inner->next = inner->next->next;",
+    "               delete temp;",
+    "           } else {",
+    "               inner = inner->next;",
+    "           }",
+    "       }",
+    "   outer = outer->next;",
+    "   }",
+    "return head",
+    "}",
 ];
 
 export const DetectALoopPseudocode = [];
@@ -809,6 +859,34 @@ export const exercises = [
         description: "CheckIfSorted Code  Exercise",
         type: "code",
         data: CheckIfSortedCode
+    },
+    {
+        id: 17,
+        title: "RemoveDupsFromSortedList Pseudocode Exercise",
+        description: "RemoveDupsFromSortedList Pseudocode Exercise",
+        type: "pseudocode",
+        data: RemoveDuplicatesFromSortedListPseudocode
+    },
+    {
+        id: 18,
+        title: "RemoveDupsFromSortedList Code Exercise",
+        description: "RemoveDupsFromSortedList Code  Exercise",
+        type: "code",
+        data: RemoveDuplicatesFromSortedCode
+    },
+    {
+        id: 19,
+        title: "RemoveDupsFromUnSortedList Pseudocode Exercise",
+        description: "RemoveDupsFromSortedList Pseudocode Exercise",
+        type: "pseudocode",
+        data: RemoveDuplicatesFromUnSortedListPseudocode
+    },
+    {
+        id: 20,
+        title: "RemoveDupsFromUnSortedList Code Exercise",
+        description: "RemoveDupsFromUnSortedList Code  Exercise",
+        type: "code",
+        data: RemoveDuplicatesFromUnSortedCode
     },
 ];
 

@@ -711,6 +711,10 @@ export const tips = [
     {
         title: "Video Scrolling Feature",
         url: "https://snippets.cacher.io/snippet/d228ca0edf81692f23c1"
+    },
+    {
+        title: "Debugging C++ on MAC(lldb)",
+        url: "https://snippets.cacher.io/snippet/9878b6b681577ab2d235"
     }
 ];
 

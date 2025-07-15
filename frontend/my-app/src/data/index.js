@@ -474,8 +474,29 @@ export const RemoveDuplicatesFromUnSortedCode = [
     "}",
 ];
 
-export const DetectALoopPseudocode = [];
-export const DetectALoopCode = [];
+export const DetectALoopPseudocode = [
+    "hasCycle:",
+    "- check if list is empty(an empty list doesn't have cycle)",
+    "- create two pointers(slow, fast). start with head",
+    "traverse until fast && fast->next",
+    "move pointers forward",
+    "compare pointers. if met - return true, otherwise - false",
+];
+export const DetectALoopCode = [
+    "bool HasCycle(Node* head) {",
+    "   if (head == nullptr) return false;",
+    "   Node* slow = head;",
+    "   Node* fast = head;",
+    "   while (fast != nullptr && fast->next != nullptr) {",
+    "       slow = slow->next;",
+    "       fast = fast->next->next;",
+    "       if (slow == fast) {",
+    "           return true;",
+    "       }",
+    "   return false;",
+    "   }",
+    "}"
+];
 
 export const SumListPseudocode = [];
 export const SumListCode = [];
@@ -887,6 +908,20 @@ export const exercises = [
         description: "RemoveDupsFromUnSortedList Code  Exercise",
         type: "code",
         data: RemoveDuplicatesFromUnSortedCode
+    },
+    {
+        id: 21,
+        title: "DetectCycle Pseudocode Exercise",
+        description: "DetectCycle Pseudocode Exercise",
+        type: "pseudocode",
+        data: DetectALoopPseudocode
+    },
+    {
+        id: 22,
+        title: "DetectCycle Code Exercise",
+        description: "DetectCycle Code  Exercise",
+        type: "code",
+        data: DetectALoopCode
     },
 ];
 

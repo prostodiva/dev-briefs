@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { video, whiteBoard } from "../data/index";
+import { video, whiteBoard, debugging } from "../data/index";
 import { getYouTubeVideoId } from "../utils/youtube";
 
 const thumbnailQualities = [
@@ -137,6 +137,19 @@ const Tutorials = () => {
                     <div className="flex gap-6 px-4">
                         {whiteBoard.map((whiteBoard) => (
                             <TutorialsCard key={whiteBoard.id} {...whiteBoard} />
+                        ))}
+                    </div>
+                </div>
+
+                <h3 className="text-xl font-light text-center">Master C++ Debugging</h3>
+                <div
+                    ref={scrollContainerRef}
+                    className="overflow-x-auto pb-4 scrollbar-hide"
+                    style={{ scrollBehavior: 'smooth' }}
+                >
+                    <div className="flex gap-6 px-4">
+                        {debugging.map((debugging) => (
+                            <TutorialsCard key={debugging.id} {...debugging} />
                         ))}
                     </div>
                 </div>

@@ -1066,3 +1066,12 @@ export const whiteBoard = [
         src: "https://www.youtube.com/embed/RQrRi0kYgQ4"
     }
     ];
+
+export const debugging = [
+    {
+        id: 1,
+        title: "C++ Runtime Errors: Debugging Undefined Behavior with LLDB on macOS",
+        category: "Debugging",
+        src: "https://www.youtube.com/embed/Jch5-H4xH0o"
+    }
+];

@@ -1073,5 +1073,11 @@ export const debugging = [
         title: "C++ Runtime Errors: Debugging Undefined Behavior with LLDB on macOS",
         category: "Debugging",
         src: "https://www.youtube.com/embed/Jch5-H4xH0o"
+    },
+    {
+        id: 2,
+        title: "C++ Segmentation Fault: Dereferencing Null Pointers - LLDB Debugging Tutorial",
+        category: "Debugging",
+        src: "https://www.youtube.com/embed/bas1ilcO3C8"
     }
 ];

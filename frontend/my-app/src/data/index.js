@@ -501,8 +501,25 @@ export const DetectALoopCode = [
 export const SumListPseudocode = [];
 export const SumListCode = [];
 
-export const FindMiddlePseudocode = [];
-export const FindMiddleCodeCode = [];
+export const FindMiddlePseudocode = [
+    "findMiddleNode:",
+    "   check if the list is empty",
+    "   create two pointers(slow,fast)",
+    "   traverse both until fast->next and fast->next->next !- nullptr",
+    "   when it is - return slow",
+];
+export const FindMiddleCodeCode = [
+    "Node* FindMiddleNode(Node* head) {",
+    "   if (head == nullptr) return nullptr;",
+    "   Node* slow = head;",
+    "   Node* fast = head;",
+    "   while (fast->next != nullptr && fast->next->next != nullptr) {",
+    "       slow = slow->next;",
+    "       fast = fast->next->next;",
+    "   }",
+    "return slow;",
+    "}",
+];
 
 export const AppendListsPseudocode = [
 
@@ -938,6 +955,20 @@ export const exercises = [
         description: "DetectCycle Code  Exercise",
         type: "code",
         data: DetectALoopCode
+    },
+    {
+        id: 23,
+        title: "FindMiddleNode in a Singly Linked List Pseudocode Exercise",
+        description: "FindMiddleNode in a Singly Linked List Pseudocode Exercise",
+        type: "pseudocode",
+        data: FindMiddlePseudocode
+    },
+    {
+        id: 24,
+        title: "FindMiddleNode in a Singly Linked List",
+        description: "FindMiddleNode in a Singly Linked List Code  Exercise",
+        type: "code",
+        data: FindMiddleCodeCode
     },
 ];
 

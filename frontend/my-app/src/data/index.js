@@ -1,4 +1,4 @@
-import { day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
+import { day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
 
 export const navLinks = [
     {
@@ -724,6 +724,12 @@ export const challengeData = [
         timestamp: "2025-07-18 10:00:00",
         image: day29
     },
+    {
+        day: 30,
+        content: "Practiced InsertNode in DoublyLL. Successfully set up a C++ backend environment for a task management system using Crow framework, including installing and configuring all necessary dependencies (Boost, spdlog, fmt, libpq) and creating a functional Makefile with sanitizer support. Designed and implemented comprehensive class headers for the core entities: created a custom V template class as a vector replacement with full memory management, built a complete User class with project/team relationships and authentication methods, developed a comprehensive Task class with file/comment/tag management and status workflow, and designed a Project class with member/task collections and access control. Established proper C++ development practices including header guards, const correctness, proper parameter passing with references, constructor initialization lists, enum classes for status management, and organized the codebase with clear separation between declarations (headers) and implementations (source files) while maintaining consistent naming conventions and project structure.",
+        timestamp: "2025-07-19 6:00:00",
+        image: day30
+    }
 ];
 
 export const tips = [

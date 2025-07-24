@@ -26,8 +26,9 @@ import day27 from "./day27.png";
 import day28 from "./day28.png";
 import day29 from "./day29.png";
 import day30 from "./day30.png";
+import day31 from "./day31.png";
 import back4 from "./back4.png";
 
-export { day30, day29,day28, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, back4, day12, day13, day14, day15, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27 };
+export { day31, day30, day29,day28, day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, back4, day12, day13, day14, day15, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27 };
 
 

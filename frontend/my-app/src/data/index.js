@@ -772,6 +772,10 @@ export const tips = [
     {
         title: "Development Logs",
         url: "https://snippets.cacher.io/snippet/cc81c42291fc04cd6cc4"
+    },
+    {
+        title: "JavaScript vs TypeScript",
+        url: "https://snippets.cacher.io/snippet/c7f6bcf78fc2131a35e7"
     }
 ];
 

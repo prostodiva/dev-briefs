@@ -1,6 +1,8 @@
 import BackendCard from "../components/BackendCard.jsx";
 import DataStrCard from "../components/DataStrCard.jsx";
 import Layout from "../components/Layout.jsx";
+import FullStackCard from "../components/FullStackCard.jsx";
+import BasicQuestCard from "../components/BasicQuestCard.jsx";
 
 const CardPage = () => {
     return (
@@ -13,6 +15,12 @@ const CardPage = () => {
                         </div>
                         <div className="bg-white rounded-lg shadow-lg">
                             <DataStrCard />
+                        </div>
+                        <div className="bg-white rounded-lg shadow-lg">
+                            <FullStackCard />
+                        </div>
+                        <div className="bg-white rounded-lg shadow-lg">
+                            <BasicQuestCard />
                         </div>
                     </div>
                 </div>

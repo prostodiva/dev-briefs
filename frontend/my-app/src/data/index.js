@@ -836,6 +836,101 @@ export const questions = [
                 "- Elements are added at one end (rear) and removed from the other end (front)\n" +
                 "- Common operations: enqueue, dequeue, peek",
         category: "Data Structure"
+    },
+    {
+        question: "How do you architect a layered application?",
+        answer: "I separate the application into layers - presentation for UI, business logic for rules, and data access for database operations - with each layer having one responsibility and communicating through interfaces. ",
+        category: "Full-Stack"
+    },
+    {
+        question: "Walk me through the process of creating a web page from scratch",
+        answer: "I will start with going through the requirements. If the project requires a backend implementation I would start with building UML diagrams. If it is only static page I would start with a wireframe and design in Figma. After that I would create a new repo a github,  setup a simple structure, and install all required libraries and dependencies like React, Vite. I would also add a logging script to make sure I track errors for debugging.",
+        category: "Full-Stack",
+    },
+    {
+        question: "What user interface and security principles do you consider when building a website or online application",
+        answer: "For UI principles, I make sure the website looks good and is easy to use by keeping the design simple and consistent, making sure it works on phones and on computers, and adding clear buttons and menus so users know where to click.\n" +
+            "For security, I use JWT tokens for authentication to keep users logged in securely, validate user inputs to prevent bad data, and make sure only the right people can access different parts of the app by checking their JWT token permissions and using HTTPS to keep the data safe.\n",
+        category: "Full-Stack"
+    },
+    {
+        question: "Explain how a REST API works.",
+        answer: "REST APIs work by using HTTP methods for CRUD operations (GET, POST, PUT, DELETE) to perform operations on resources identified by URLs, where GET retrieves data, POST creates new resources, PUT updates existing resources, and DELETE removes resources, with each request being stateless and containing all necessary information for the server to process it. The API returns data in formats like JSON , and uses standard HTTP status codes (200 for success, 404 for not found, 500 for server error) to communicate the result of each operation.",
+        category: "Full-Stack"
+    },
+    {
+        question: "How do you secure an API?",
+        answer: "I secure an API by implementing authentication using JWT tokens, validating and sanitizing all inputs to prevent injection attacks, using HTTPS encryption for data transmission, setting up proper CORS policies, implementing rate limiting to prevent abuse, using security headers , and regularly updating dependencies and monitoring for vulnerabilities.",
+        category: "Full-Stack"
+    },
+    {
+        question: "What happens when a user logs in? ",
+        answer: "When a user logs in, the server validates their credentials (username/password) against the database, and if valid, creates a session or generates a JWT token containing user information and permissions, which is then sent back to the client and stored (usually in localStorage, sessionStorage, or cookies) so the client can include this token in subsequent API requests to prove the user is authenticated and access protected resources.",
+        category: "Full-Stack"
+    },
+    {
+        question: "How do you handle bugs or failed deployments?",
+        answer: "I handle bugs and failed deployments by first quickly rolling back to the previous working version, then investigating the issue using logs tools to identify the root cause, fixing the bug in a separate branch, testing, and deploying again with proper monitoring to ensure the issue is resolved while documenting what went wrong to prevent similar problems in the future.",
+        category: "Full-Stack"
+    },
+    {
+        question: "How do you check other people code for bugs",
+        answer: "I would use analytic tools like Eslint, that could catch syntax issues and potential bugs.\n" +
+            "Also, I could review the structure of the projects and read a code line by line to understand the flow.\n" +
+            "I would use a testing approach - Check if individual functions work correctly.\n" +
+            "I would add  logging/print statements to trace execution flow.\n" +
+            "I would use git to track recent changes\n",
+        category: "Full-Stack"
+    },
+    {
+        question: "Tell me about yourself.",
+        answer: "My name is Margarita, but I go by Rita.  I’m currently a Computer Science and Web Development student at GCC and Saddleback College, specializing in full-stack development. Starting this fall, I will begin working as a CS tutor, which I’m excited about as an opportunity to both learn and help others. I’ve built several projects using React, Node.js, and JavaScript, and I’m passionate about AI and automation and I am excited about the opportunity to contribute in that field. ",
+        category: "Basic"
+    },
+    {
+        question: "What do you know about the company?",
+        answer: "___ is an AI-powered platform that helps real estate professionals automate sales and customer communication through AI assistants, improving efficiency and responsiveness across channels like chat, text, and email.",
+        category: "Basic"
+    },
+    {
+        question: "How your skills align with our mission.",
+        answer: "With experience building full-stack web projects across different environments and a strong dedication to continuous learning, I’m confident I can contribute to ___’s mission of empowering real estate professionals through scalable, intelligent automation.",
+        category: "Basic"
+    },
+    {
+        question: "What do you like to do outside of work?",
+        answer: "I enjoy listening to CS podcasts, working on my developer blog, I also like going to the ocean, dance, because I am a professional dancer in the past.",
+        category: "Basic"
+    },
+    {
+        question: "Describe your most recent development project.",
+        answer: "Over the past two weeks, I’ve worked on multiple projects, including a C++ full-stack Task Management System with advanced features for managing users, teams, and projects. Currently, I’m developing a full-stack web application that integrates AI tools, allowing me to combine my backend and frontend skills with emerging AI technologies.",
+        category: "Basic"
+    },
+    {
+        question: "What languages do you program in?",
+        answer: "I’m comfortable programming in Java, C++, JavaScript, and currently working on a project using TypeScript. I also have experience building projects across different environments using libraries and frameworks like React, Node.js, Spring Boot, and Express.",
+        category: "Basic"
+    },
+    {
+        question: "What are your strengths as a developer?",
+        answer: "When I commit to a deadline, I do whatever it takes to deliver. I am extremely responsible and devoted. ",
+        category: "Basic"
+    },
+    {
+        question: "What's the most challenging project that you have worked on?",
+        answer: "One of the most challenging projects I worked on was a full-stack NFT Marketplace. It involved a complex backend built in C++ using the Crow framework for APIs, along with integration of the Solana Blockchain, which required deep understanding of smart contracts and secure transaction handling.",
+        category: "Basic"
+    },
+    {
+        question: "What is your ideal work environment?",
+        answer: "I enjoy working in a collaborative environment where people are open to sharing their knowledge.",
+        category: "Basic"
+    },
+    {
+        question: "How to run a clean, scalable code",
+        answer: "I write clean and scalable code by following consistent naming conventions and code style, breaking large functions into smaller, focused functions with single responsibilities, using design patterns and proper separation of concerns, writing comprehensive tests, documenting my code, avoiding code duplication through reusable functions and classes, and planning for future growth by making the code modular and easy to extend without major refactoring.",
+        category: "Basic"
     }
 ];
 

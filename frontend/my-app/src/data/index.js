@@ -1,4 +1,4 @@
-import { day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
+import { day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
 
 export const navLinks = [
     {
@@ -751,8 +751,14 @@ export const challengeData = [
     {
         day: 34,
         content: "Practice: created dual-backend(auth and proxy; main-backend) with NodeJs, express, JavaScript. + Postgres db.",
-        timestamp: "2025-07-25 2:30:00",
+        timestamp: "2025-07-28 2:30:00",
         image: day34
+    },
+    {
+        day: 35,
+        content: "Setup a Frontend React project with required libraries. Created login, registration components; Set up API with Axios; Optimized performance.",
+        timestamp: "2025-07-29 7:30:00",
+        image: day35
     }
 ];
 

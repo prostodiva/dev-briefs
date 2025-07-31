@@ -12,9 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="591c217c-7833-4076-84dc-e791cb176954" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/my-app/src/data/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/data/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="591c217c-7833-4076-84dc-e791cb176954" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +80,7 @@
       <updated>1748669986837</updated>
       <workItem from="1748669988266" duration="846000" />
       <workItem from="1749605426463" duration="132000" />
-      <workItem from="1751825581887" duration="790000" />
+      <workItem from="1751825581887" duration="1419000" />
     </task>
     <servers />
   </component>

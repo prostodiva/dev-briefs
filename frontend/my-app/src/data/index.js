@@ -1,4 +1,4 @@
-import { day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
+import { day36,day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
 
 export const navLinks = [
     {
@@ -759,6 +759,12 @@ export const challengeData = [
         content: "Setup a Frontend React project with required libraries. Created login, registration components; Set up API with Axios; Optimized performance.",
         timestamp: "2025-07-29 7:30:00",
         image: day35
+    },
+    {
+        day: 36,
+        content: "TanStack Router: File-based routing with lazy loading (/past route); TanStack Query: Fetches paginated past orders with 30-second cache; Fetches individual order details with 24-hour cache; Handles loading states for both queries; Modal System: Portal-based modal implementation; Clean DOM management with useEffect; Conditional rendering based on focusedOrder state",
+        timestamp: "2025-07-30 6:00:00",
+        image: day36
     }
 ];
 

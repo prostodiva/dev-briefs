@@ -1,4 +1,4 @@
-import { day37,day36,day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
+import { day38, day37,day36,day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
 
 export const navLinks = [
     {
@@ -771,6 +771,12 @@ export const challengeData = [
         content: "Feat: LoginForm tests, RegistrationForm tests, auth API tests; learned how to use test:coverage; snapshot; Suspense instead of loading..",
         timestamp: "2025-07-31 6:30:00",
         image: day37
+    },
+    {
+        day: 38,
+        content: "Created Search images API. Practiced using props, state. Parent, child relationships. Handle user input; creating and displaying a list of objects.",
+        timestamp: "2025-08-02 8:30:00",
+        image: day38
     }
 ];
 

@@ -1,4 +1,4 @@
-import { day38, day37,day36,day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
+import { day39, day38, day37,day36,day35,day34, day33, day32, day31, day30,day29,day28, day1, day10, day11, day12, day13, day14, day15, day2, day3, day4, day5, day6, day7, day8, day9, day16, day19, day20, day21, day22, day23, day24, day25, day26, day27} from "../assets/images";
 
 export const navLinks = [
     {
@@ -777,6 +777,12 @@ export const challengeData = [
         content: "Created Search images API. Practiced using props, state. Parent, child relationships. Handle user input; creating and displaying a list of objects.",
         timestamp: "2025-08-02 8:30:00",
         image: day38
+    },
+    {
+        day: 39,
+        content: "Practiced forms handeling using Book app example(add a book; edit;remove)",
+        timestamp: "2025-08-03 8:35:00",
+        image: day39
     }
 ];
 

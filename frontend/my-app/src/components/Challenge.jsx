@@ -10,7 +10,20 @@ const PostCard = ({ day, content, timestamp, image }) => {
                 <h3 className="text-xl font-bold text-blue-600">Day {day}</h3>
                 <span className="text-gray-500 text-sm">{timestamp}</span>
             </div>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">{content}</p>
+
+            {/* Replace the single p tag with this */}
+            <div className="text-gray-700 mb-4 text-sm sm:text-base">
+                {Array.isArray(content) ? (
+                    content.map((item, index) => (
+                        <div key={index} className="mb-2">
+                            {item}
+                        </div>
+                    ))
+                ) : (
+                    <p>{content}</p>
+                )}
+            </div>
+
             {image && (
                 <div className="mt-4 flex justify-center">
                     <EnlargedImage
@@ -107,7 +120,7 @@ const Challenge = () => {
             </div>
            
 
-            <div className="space-y-4 pb-8">
+            <div className="space-y-6 pb-8">
                 {sortedData.map((post, index) => (
                     <PostCard
                         key={index}

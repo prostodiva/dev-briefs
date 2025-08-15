@@ -498,9 +498,6 @@ export const DetectALoopCode = [
     "}"
 ];
 
-export const SumListPseudocode = [];
-export const SumListCode = [];
-
 export const FindMiddlePseudocode = [
     "findMiddleNode:",
     "   check if the list is empty",
@@ -709,6 +706,9 @@ export const IsPalindromeCode = [
     "}",
 ];
 
+
+export const SumListPseudocode = [];
+export const SumListCode = [];
 
 export const challengeData = [
     {
@@ -947,6 +947,264 @@ export const challengeData = [
         content: "Practiced forms handeling using Book app example(add a book; edit;remove)",
         timestamp: "2025-08-03 8:35:00",
         image: day39
+    },
+    {
+        day: 40,
+        content: [
+            "Core React Concepts\n",
+            "Component Structure: Learned to create functional components with proper JSX syntax\n",
+            "Props & State: Understood how to pass data between components and manage local state\n",
+            "Event Handling: Implemented click handlers and form submissions\n",
+            "Conditional Rendering: Used conditional logic to show/hide components\n",
+            "Basic Components Built\n",
+            "Button Component: Created a reusable button with multiple variants (primary, secondary, success, warning, danger, outline, rounded)\n",
+            "Panel Component: Built a simple container component for consistent styling\n",
+            "Link Component: Implemented custom navigation links with active state styling\n",
+            "Styling & UI\n",
+            "Tailwind CSS: Integrated and used Tailwind for responsive design\n",
+            "CSS Classes: Applied utility classes for layout, spacing, and visual styling\n",
+            "Component Styling: Used dynamic class names based on props and state\n"
+        ],
+        timestamp: "2025-08-04 6:35:00"
+    },
+    {
+        day: 41,
+        content: [
+            "Advanced State Management & User Interactions",
+            "State Management Evolution",
+            "useState Hook: Started with simple state management for component data",
+            "useReducer Hook: Advanced to more complex state logic with action dispatching",
+            "Immer Integration: Learned to use Immer for immutable state updates with mutable syntax",
+            "Interactive Components",
+            "Accordion: Built expandable/collapsible sections with smooth animations",
+            "Dropdown: Created a selectable dropdown with click-outside detection",
+            "Modal: Implemented a portal-based modal with backdrop and content",
+            "Advanced React Patterns",
+            "useEffect Hook: Managed side effects like event listeners and cleanup",
+            "useRef Hook: Used refs for DOM manipulation and click-outside detection",
+            "Event Delegation: Implemented proper event handling for dynamic content",
+            "Component Architecture",
+            "Compound Components: Built components that work together (like Accordion with items)",
+            "Render Props Pattern: Used flexible rendering through children and actionBar props",
+            "Portal Rendering: Implemented modals using ReactDOM.createPortal for proper layering"
+        ],
+        timestamp: "2025-08-04 6:35:00"
+    },
+    {
+        day: 42,
+        content: [
+            "Advanced State Management & User Interactions",
+            "State Management Evolution",
+            "useState Hook: Started with simple state management for component data",
+            "useReducer Hook: Advanced to more complex state logic with action dispatching",
+            "Immer Integration: Learned to use Immer for immutable state updates with mutable syntax",
+            "Interactive Components",
+            "Accordion: Built expandable/collapsible sections with smooth animations",
+            "Dropdown: Created a selectable dropdown with click-outside detection",
+            "Modal: Implemented a portal-based modal with backdrop and content",
+            "Advanced React Patterns",
+            "useEffect Hook: Managed side effects like event listeners and cleanup",
+            "useRef Hook: Used refs for DOM manipulation and click-outside detection",
+            "Event Delegation: Implemented proper event handling for dynamic content",
+            "Component Architecture",
+            "Compound Components: Built components that work together (like Accordion with items)",
+            "Render Props Pattern: Used flexible rendering through children and actionBar props",
+            "Portal Rendering: Implemented modals using ReactDOM.createPortal for proper layering"
+        ],
+        timestamp: "2025-08-04 6:35:00"
+    },
+    {
+        day: 43,
+        content: [
+            "Advanced State Management & Redux Integration",
+            "Redux Toolkit Implementation",
+            "RTK Query: Implemented modern API state management with automatic caching and synchronization",
+            "Redux Slices: Created usersSlice with proper action handling and state updates",
+            "Async Thunks: Built fetchUsers, addUser, and deleteUser thunks for API operations",
+            "Custom Hooks & State Logic",
+            "useThunk Hook: Built custom hook for managing async Redux operations with loading and error states",
+            "useState Hook: Managed local component state for UI interactions like expandable panels",
+            "useCallback Hook: Optimized thunk dispatching with proper dependency management",
+            "Component Architecture & Patterns",
+            "ExpandablePanel: Built collapsible sections with smooth state transitions and icon animations",
+            "Button Component: Created versatile button with multiple variants (primary, secondary, success, warning, danger)",
+            "Skeleton Loading: Implemented animated loading placeholders with shimmer effects",
+            "Data Management & API Integration",
+            "RESTful API Integration: Connected to JSON server backend with proper error handling",
+            "CRUD Operations: Implemented create, read, update, and delete for users, albums, and photos",
+            "Tag-based Cache Invalidation: Built smart cache management with providesTags and invalidatesTags"
+        ],
+        timestamp: "2025-08-05 9:15:00"
+    },
+    {
+        day: 44,
+        content: [
+            "Advanced Redux State Management & Optimization",
+            "State Management Evolution",
+            "Redux Toolkit Slices: Implemented usersSlice with proper action handling and state updates",
+            "Async Thunks: Created fetchUsers, addUser, and deleteUser thunks for API operations",
+            "State Normalization: Organized state structure with proper data relationships",
+            "Error Handling & Loading States",
+            "Loading State Management: Implemented isLoading flags for better UX during async operations",
+            "Error State Handling: Added proper error handling for failed API calls and user feedback",
+            "Optimistic Updates: Implemented immediate UI updates with rollback on failure",
+            "Component State Synchronization",
+            "Redux-React Integration: Connected components to Redux store using useSelector and useDispatch",
+            "State Persistence: Maintained component state across re-renders and navigation",
+            "Real-time Updates: Implemented live data synchronization between components"
+        ],
+        timestamp: "2025-08-06 14:30:00"
+    },
+    {
+        day: 45,
+        content: [
+            "Advanced API Integration & Component Architecture",
+            "RTK Query Mutations",
+            "addPhoto Mutation: Implemented photo creation with proper cache invalidation",
+            "removePhoto Mutation: Built photo deletion with optimistic updates",
+            "Cache Management: Implemented intelligent cache invalidation strategies",
+            "Advanced Component Architecture",
+            "Nested Component Trees: Built complex component hierarchies (Users → Albums → Photos)",
+            "Props Drilling Solutions: Implemented efficient data passing through component layers",
+            "Component Reusability: Created modular components that work across different contexts",
+            "State Management Optimization",
+            "Selective Re-rendering: Optimized component updates to prevent unnecessary re-renders",
+            "Memoization: Implemented performance optimizations for expensive operations",
+            "State Synchronization: Ensured consistent state across all components"
+        ],
+        timestamp: "2025-08-07 11:45:00"
+    },
+    {
+        day: 46,
+        content: [
+            "Advanced UI/UX Patterns & User Experience",
+            "Interactive Photo Management",
+            "Photo Grid: Built interactive photo grid with hover effects and action overlays",
+            "Hover Interactions: Added smooth hover effects with opacity transitions and icon reveals",
+            "Action Overlays: Implemented trash can icons that appear on hover for photo deletion",
+            "Responsive Design & Layout",
+            "Mobile-First Design: Implemented responsive layouts with proper spacing and sizing",
+            "Grid Layout: Created flexible photo grid that adapts to different screen sizes",
+            "Visual Feedback: Added immediate visual responses to user actions",
+            "Loading States & Animations",
+            "Enhanced Skeleton Loading: Improved loading states with better visual feedback",
+            "CSS Animations: Implemented smooth transitions and micro-interactions",
+            "User Experience Enhancement",
+            "Event Handling: Built proper event delegation and click handling",
+            "Action Confirmation: Created user-friendly confirmation flows for destructive actions"
+        ],
+        timestamp: "2025-08-08 16:20:00"
+    },
+    {
+        day: 47,
+        content: [
+            "Performance Optimization & Advanced State Management",
+            "Complex State Dependencies",
+            "State Relationships: Managed interconnected state between users, albums, and photos",
+            "State Synchronization: Ensured data consistency across all components and views",
+            "Cache Management: Implemented intelligent cache invalidation strategies for optimal performance",
+            "Performance Optimization",
+            "Component Memoization: Prevented unnecessary re-renders with React.memo and useMemo",
+            "Bundle Optimization: Optimized imports and reduced bundle size for faster loading",
+            "Lazy Loading: Implemented code splitting for better initial load performance",
+            "Advanced Redux Patterns",
+            "Selector Optimization: Built efficient selectors for data retrieval and transformation",
+            "Action Creators: Implemented proper action creation patterns and middleware integration",
+            "Custom Middleware: Added logging and debugging middleware for development",
+            "Memory Management",
+            "Memory Leak Prevention: Added proper cleanup and memory management in components",
+            "Event Listener Cleanup: Implemented proper cleanup for event listeners and subscriptions"
+        ],
+        timestamp: "2025-08-09 13:10:00"
+    },
+    {
+        day: 48,
+        content: [
+            "Testing & Quality Assurance Implementation",
+            "Component Testing",
+            "Unit Testing: Implemented comprehensive unit tests for individual components",
+            "Integration Testing: Built tests for component interactions and data flow patterns",
+            "Mock Data: Created test fixtures and mock API responses for reliable testing",
+            "Error Handling & Recovery",
+            "Error Boundaries: Built React error boundaries for graceful error handling",
+            "Fallback UI: Implemented user-friendly error states and recovery options",
+            "Error Logging: Added proper error logging and monitoring for debugging",
+            "Code Quality & Maintenance",
+            "Code Organization: Refactored and organized code for better maintainability and readability",
+            "Documentation: Added comprehensive code comments and component documentation",
+            "Type Safety: Implemented PropTypes and type checking for better code reliability",
+            "Testing Best Practices",
+            "Test Coverage: Ensured high test coverage for critical application functionality",
+            "Test Maintainability: Built maintainable test suites with proper test organization"
+        ],
+        timestamp: "2025-08-10 10:25:00"
+    },
+    {
+        day: 49,
+        content: [
+            "Advanced Styling & Component Patterns",
+            "Dynamic Styling Solutions",
+            "CSS-in-JS: Implemented dynamic styling based on component state and props",
+            "Animation Libraries: Added smooth transitions and micro-interactions for better UX",
+            "Responsive Breakpoints: Built mobile-first responsive design system with Tailwind CSS",
+            "Advanced Component Patterns",
+            "Render Props: Implemented flexible rendering patterns for dynamic content and layouts",
+            "Compound Components: Built complex component compositions that work together seamlessly",
+            "Context API: Used React Context for deep prop drilling scenarios and global state",
+            "Performance Monitoring & Optimization",
+            "Performance Metrics: Implemented performance monitoring and optimization strategies",
+            "Bundle Analysis: Analyzed and optimized bundle size and loading performance",
+            "Memory Leak Prevention: Added proper cleanup and memory management in components",
+            "Advanced Styling Techniques",
+            "CSS Custom Properties: Used CSS variables for dynamic theming and styling",
+            "Animation Performance: Optimized animations for smooth 60fps performance"
+        ],
+        timestamp: "2025-08-11 15:40:00"
+    },
+    {
+        day: 50,
+        content: [
+            "Production Readiness & Deployment Preparation",
+            "Environment Configuration",
+            "Build Environments: Set up different configurations for development and production",
+            "Build Optimization: Optimized production builds for performance and bundle size",
+            "Error Monitoring: Implemented production error tracking and monitoring systems",
+            "Advanced State Management",
+            "State Persistence: Added local storage integration for state persistence across sessions",
+            "Offline Support: Implemented basic offline functionality and data caching strategies",
+            "State Migration: Built state migration strategies for app updates and version changes",
+            "Security & Best Practices",
+            "Input Validation: Added proper input validation and sanitization for security",
+            "Security Headers: Implemented security best practices and headers",
+            "Code Splitting: Added route-based code splitting for better performance and loading",
+            "Production Optimization",
+            "Performance Monitoring: Added production performance monitoring and analytics",
+            "Error Recovery: Implemented graceful error recovery and user feedback systems"
+        ],
+        timestamp: "2025-08-12 12:15:00"
+    },
+    {
+        day: 51,
+        content: [
+            "Final Project Integration & Advanced Features",
+            "End-to-End Testing & Quality",
+            "Comprehensive Testing: Implemented end-to-end testing across the entire application",
+            "Performance Optimization: Final performance tuning and optimization for production",
+            "User Experience Refinement: Polished UI/UX based on testing feedback and user testing",
+            "Advanced Features Implementation",
+            "Search & Filtering: Added search and filtering capabilities for users and albums",
+            "Sorting & Pagination: Implemented data sorting and pagination for large datasets",
+            "Real-time Updates: Added WebSocket integration for live data updates and synchronization",
+            "Project Documentation & Maintenance",
+            "API Documentation: Created comprehensive API documentation and usage examples",
+            "Component Library: Built a reusable component library with comprehensive documentation",
+            "Deployment Guide: Created deployment and maintenance documentation for the team",
+            "Future Planning & Scalability",
+            "Feature Roadmap: Planned future features and improvements based on user feedback",
+            "Scalability Planning: Designed architecture for future growth and feature expansion",
+            "Maintenance Strategy: Established ongoing maintenance and update procedures"
+        ],
+        timestamp: "2025-08-13 17:30:00"
     }
 ];
 
@@ -1360,6 +1618,76 @@ export const exercises = [
         data: IsPalindromeCode
     }
 ];
+
+export const createCircularPseudocode = [
+    "create a newNode",
+    "if it is the first node:",
+    "     - make it point to itself",
+    "     - head is a newNode",
+    "else - create temp pointer",
+    "     - traverse until temp hits the head(find the last node and insert after)",
+    "     - insert neNode at the end:",
+    "      newNode's next point to the head",
+    "      the last node's next point to newNode",
+    " return head"
+];
+
+export const createCircularCode = [
+    "Node* CreateCircular(Node*& head, int value) {",
+    "   Node* newNode = new Node(value)",
+    "   if (head == nullptr) {",
+    "       newNode->next = newNode;",
+    "       head = newNode;",
+    "   } else {",
+    "       Node* temp = head;",
+    "       while (temp->next != head) {",
+    "           temp = temp->next;",
+    "       }",
+    "       newNode->next = head;",
+    "       temp->next = newNode;",
+    "   }",
+    "   return head;",
+    "}",
+];
+
+export const deleteCircularCode = [
+    "void DeleteCircular(Node*& head) {",
+    "   if (head == nullptr) return nullptr;",
+    "   Node* temp = head->next;",
+    "   while (temp != head) {",
+    "       Node* last = temp;",
+    "       temp = temp->next;",
+    "       delete last;",
+    "   }",
+    "   delete head;",
+    "   head = nullptr;",
+    "}"
+];
+
+export const circularExercises = [
+    {
+        id: 1,
+        title: "Create Circular List pseudocode Exercise",
+        description: "create Circular list",
+        type: "pseudocode",
+        data: createCircularPseudocode
+    },
+    {
+        id: 2,
+        title: "Create Circular List code Exercise",
+        description: "create Circular list",
+        type: "code",
+        data: createCircularCode
+    },
+    {
+        id: 3,
+        title: "Delete Circular List code Exercise",
+        description: "delete Circular list",
+        type: "code",
+        data: deleteCircularCode
+    }
+];
+
 
 export const video = [
     {

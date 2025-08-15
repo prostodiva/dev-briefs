@@ -186,7 +186,7 @@ const ExerciseSection = ({ title, description, lines, onShuffle, shuffled, showC
     );
 };
 
-const LinkedListEx = () => {
+const SinglyLinkedList = () => {
     const [activeExercise, setActiveExercise] = useState(1);
     const [exerciseStates, setExerciseStates] = useState(() => {
         // Initialize state for all exercises
@@ -314,4 +314,4 @@ const LinkedListEx = () => {
     );
 };
 
-export default LinkedListEx;
+export default SinglyLinkedList;

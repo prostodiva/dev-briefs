@@ -522,19 +522,80 @@ export const FindMiddleCodeCode = [
 ];
 
 export const AppendListsPseudocode = [
-
+    "check if first or second list is empty",
+    "create temp pointer; assign with the first head",
+    "traverse until next node is nullptr",
+    "relink temp next with the second head",
+    "assign the second head with nullptr",
+    "return the first head"
 ];
 
 export const AppendListCode = [
-
+    "Node* Append(Node*& first, Node*& second) {",
+    "   if (first == nullptr && second == nullptr) return nullptr;",
+    "   Node* temp = first;",
+    "   while(temp->next != nullptr) {",
+    "       temp = temp->next;",
+    "   }",
+    "   temp->next = second;",
+    "   second = nullptr",
+    "   return first;",
+    "}"
 ];
 
 export const MergeSortedListPseudocode = [
-
+    "handle if the first or second head is empty",
+    "part 1:",
+    "   - create two pointers(temp,last)",
+    "   - compare the first two nodes from the lists. handle cases if value are equal",
+    "   - move both pointers to the smallest node",
+    "   - move the head forward",
+    "   - assign the last node with nullptr",
+    "   - repeat the same steps for case 2.",
+    "part 2:",
+    "   - traverse until one of the list is not nullptr",
+    "   - compare two values(look for the smallest or equal)",
+    "   - last next point to that node",
+    "   - move last to the head",
+    "   - move head forward",
+    "   - repeat the steps for case 2(part2)",
+    "part 3:",
+    "      - if there are remaining nodes - point to the node",
+    "      - check for != nullptr"
 ];
 
 export const MergeSortedListsCode = [
-
+    "Node<T>* Merge(Node<T>*& first, Node<T>*& second) {",
+    "   if (first == nullptr && second == nullptr) return nullptr;",
+    "   Node* last = nullptr",
+    "   Node* temp = nullptr",
+    "   if (first->data <= second->data) {",
+    "       temp = last = first;",
+    "       first = first->next;",
+    "       last->next = nullptr;",
+    "   } else if (second->data <= first->data){",
+    "       last = temp = second;",
+    "       second = second->next;",
+    "       last->next = nullptr;",
+    "   }",
+    "   while (first != nullptr && second != nullptr) {",
+    "       if (first->data <= second->data) {",
+    "           last->next = first;",
+    "           last = first;",
+    "           first = first->next;",
+    "       } else if (second->data <= first->data){",
+    "           last->next = second;",
+    "           last = second;",
+    "           second = second->next;",
+    "        }",
+    "   }",
+    "   if (first != nullptr) {",
+    "       last->next = first;",
+    "   } else {",
+    "       last->next = second;",
+    "   }",
+    "return temp;",
+    "}"
 ];
 
 export const GetIntersectionNodePseudocode = [];
@@ -1139,6 +1200,34 @@ export const exercises = [
         type: "code",
         data: FindMiddleCodeCode
     },
+    {
+        id: 25,
+        title: "Append two lists Pseudocode Exercise",
+        description: "Append two lists Pseudocode Exercise",
+        type: "pseudocode",
+        data: AppendListsPseudocode
+    },
+    {
+        id: 26,
+        title: "Append two lists code Exercise",
+        description: "Append two lists code Exercise",
+        type: "code",
+        data: AppendListCode
+    },
+    {
+        id: 27,
+        title: "Merge two lists pseudocode Exercise",
+        description: "Merge two lists pseudocode Exercise",
+        type: "pseudocode",
+        data: MergeSortedListPseudocode
+    },
+    {
+        id: 28,
+        title: "Merge two lists code Exercise",
+        description: "Merge two lists code Exercise",
+        type: "code",
+        data: MergeSortedListsCode
+    }
 ];
 
 export const video = [

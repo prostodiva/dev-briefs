@@ -644,9 +644,70 @@ export const GetIntersectionNodeCode = [
     "}"
 ];
 
-export const IsPalindromePseudocode = [];
+export const IsPalindromePseudocode = [
+    "make the function bool, check if the list is empty, return true",
+    "Part 1: Find the middle node.(slow)",
+    "       - create two pointers(slow, fast)",
+    "       - traverse until fast->next && fast->next->next",
+    "Part 2: Reverse the second half.",
+    "       - create three pointers(prev, temp, next(start from slow->next))",
+    "       - traverse until next",
+    "       - reverse using sliding technique(4 steps)",
+    "       - the head of the second half is prev",
+    "Part 3: Compare two lists.",
+    "       - create two pointers(first, second)",
+    "       - traverse until second",
+    "       - assign true to palindrome variable",
+    "       - compare data and return false and break if not equal",
+    "Part 4: Restore the list.",
+    "       - temp points to the same node as prev",
+    "       - prev points to nullptr",
+    "       - traverse until temp",
+    "       - inside the loop create next, assign with temp->next",
+    "       - reverse with three steps: temp->next to prev; prev to temp; temp to next",
+    "       - link back the first list with the second(slow->next with prev)",
+    "return the result.(palindrome variable)"
+];
 
-export const IsPalindromeCode = [];
+export const IsPalindromeCode = [
+    "bool isPalindrome(Node* head) {",
+    "   if (head == nullptr && head->next == nullptr) return true;",
+    "   Node* slow = head;",
+    "   Node* fast = head;",
+    "   while (fast->next && fast->next->next) {",
+    "       slow = slow->next;",
+    "       fast = fast->next->next;",
+    "   }",
+    "   Node* prev = nullptr;",
+    "   Node* temp = nullptr;",
+    "   Node* next = slow->next;",
+    "   while (next != nullptr) {",
+    "       prev = temp;",
+    "       temp = next;",
+    "       next = next->next;",
+    "       temp->next = prev;",
+    "   }",
+    "   prev = temp;",
+    "   Node* first = head;",
+    "   Node* second = prev;",
+    "   bool palindrome = true;",
+    "   while (second != nullptr) {",
+    "       if (first->data != second->data) {",
+    "           palindrome = false;",
+    "           break;",
+    "       }",
+    "   temp = prev;",
+    "   prev = nullptr;",
+    "   while (temp != nullptr) {",
+    "       Node* next = temp->next;",
+    "       temp->next = prev;",
+    "       prev = temp;",
+    "       temp = next;",
+    "   }",
+    "   slow->next = prev;",
+    "   return palindrome",
+    "}",
+];
 
 
 export const challengeData = [
@@ -1283,6 +1344,20 @@ export const exercises = [
         description: "GetIntersectionNode code Exercise",
         type: "code",
         data: GetIntersectionNodeCode
+    },
+    {
+        id: 31,
+        title: "IsPalindrome pseudocode Exercise",
+        description: "IsPalindrome pseudocode Exercise",
+        type: "pseudocode",
+        data: IsPalindromePseudocode
+    },
+    {
+        id: 32,
+        title: "IsPalindrome code Exercise",
+        description: "IsPalindrome code Exercise",
+        type: "code",
+        data: IsPalindromeCode
     }
 ];
 

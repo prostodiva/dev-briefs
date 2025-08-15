@@ -598,9 +598,51 @@ export const MergeSortedListsCode = [
     "}"
 ];
 
-export const GetIntersectionNodePseudocode = [];
+export const GetIntersectionNodePseudocode = [
+    "check if the list is empty",
+    "find the length of both lists separately",
+    "reset the pointers",
+    "move the pointer of the longer list by the difference",
+    "traverse both lists until nullptr",
+    "if the pointers are equal, return this node",
+    "if no intersection found, return nullptr",
+];
 
-export const GetIntersectionNodeCode = [];
+export const GetIntersectionNodeCode = [
+    "Node* GetIntersection(Node* headA, Node* headB) {",
+    "   if (headA == nullptr || headB == nullptr) return nullptr;",
+    "   int lenA = 0, lenB = 0;",
+    "   Node* tempA = headA;",
+    "   Node* tempB = headB;",
+    "   while (tempA != nullptr) {",
+    "       lenA++;",
+    "       tempA = tempA->next;",
+    "   }",
+    "   while (tempB != nullptr) {",
+    "       lenB++;",
+    "       tempB = tempB->next;",
+    "   }",
+    "   tempA = headA;",
+    "   tempB = headB;",
+    "   if (lenA > lenB) {",
+    "       for (int i = 0; i < lenA - lenB; i++) {",
+    "           tempA = tempA->next;",
+    "       }",
+    "   } else if (lenB > lenA) {",
+    "       for (int i = 0; i < lenB - lenA; i++) {",
+    "           tempB = tempB->next;",
+    "       }",
+    "   }",
+    "   while (tempA != nullptr && tempB != nullptr) {",
+    "       if (tempA == tempB) {",
+    "           return tempA;",
+    "       }",
+    "       tempA = tempA->next;",
+    "       tempB = tempB->next;",
+    "   }",
+    "   return nullptr;",
+    "}"
+];
 
 export const IsPalindromePseudocode = [];
 
@@ -1227,6 +1269,20 @@ export const exercises = [
         description: "Merge two lists code Exercise",
         type: "code",
         data: MergeSortedListsCode
+    },
+    {
+        id: 29,
+        title: "GetIntersectionNode Pseudocode Exercise",
+        description: "GetIntersectionNode pseudocode Exercise",
+        type: "pseudocode",
+        data: GetIntersectionNodePseudocode
+    },
+    {
+        id: 30,
+        title: "GetIntersectionNode code Exercise",
+        description: "GetIntersectionNode code Exercise",
+        type: "code",
+        data: GetIntersectionNodeCode
     }
 ];
 

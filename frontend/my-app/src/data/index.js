@@ -1386,6 +1386,10 @@ export const tips = [
     {
         title: "JavaScript vs TypeScript",
         url: "https://snippets.cacher.io/snippet/c7f6bcf78fc2131a35e7"
+    },
+    {
+        title: "Web Development Tool that I use in 2025",
+        url: "https://prostodiva.medium.com/web-development-project-setup-70bf7c4b0f5d"
     }
 ];
 

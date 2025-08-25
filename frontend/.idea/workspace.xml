@@ -12,7 +12,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="591c217c-7833-4076-84dc-e791cb176954" name="Changes" comment="" />
+    <list default="true" id="591c217c-7833-4076-84dc-e791cb176954" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,6 +84,8 @@
       <workItem from="1748669988266" duration="846000" />
       <workItem from="1749605426463" duration="132000" />
       <workItem from="1751825581887" duration="1419000" />
+      <workItem from="1753925019489" duration="275000" />
+      <workItem from="1756016870654" duration="670000" />
     </task>
     <servers />
   </component>

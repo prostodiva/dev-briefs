@@ -1353,33 +1353,89 @@ export const challengeData = [
         timestamp: "2025-08-24 18:30:00"
     },
     {
-        day: 64,
+        day: 58,
         content: [
-            "August 25th - Sept 1st: Ai-Assistant Full-Stack Project",
             "AI Chatbot Development & Calendar Integration",
-            "Natural Language Processing Implementation: Built conversational AI system with context awareness and conversation history persistence for intelligent meeting scheduling",
-            "Calendar Integration Architecture: Implemented Google Calendar OAuth authentication with secure token management and real-time synchronization capabilities",
-            "Smart Scheduling System: Developed AI-powered event creation and management with automatic availability checking and conflict resolution",
+            "User Experience & Interface",
             "User Authentication & Security",
             "JWT Authentication System: Implemented secure user authentication with persistent login and session management",
+            "Security Best Practices: Applied JWT authentication, secure token storage, and protected API endpoints",
+            "Created UI for register/login user"
+        ],
+        timestamp: "2025-08-25 16:20:00"
+    },
+    {
+        day: 59,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
             "User Profile Management: Created personalized user settings system with conversation history storage and preference tracking",
             "Security Implementation: Added secure token storage and session management for protected user data",
+        ],
+        timestamp: "2025-08-26 16:20:00"
+    },
+    {
+        day: 60,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
+            "Natural Language Processing Implementation: Built conversational AI system with context awareness and conversation history persistence for intelligent meeting scheduling",
             "Real-time Communication Features",
             "Instant Messaging System: Built real-time chat functionality with message history persistence and context awareness",
             "Conversation Management: Implemented customizable conversation rules and guidelines for personalized AI behavior",
             "Calendar Event Management: Created comprehensive CRUD operations for calendar events with real-time sync",
+            "Scalable Backend: Built robust API endpoints for chatbot, calendar, and user management services",
+            "Real-time Synchronization: Implemented live calendar status updates and availability checking",
+        ],
+        timestamp: "2025-08-27 16:20:00"
+    },
+    {
+        day: 61,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
+        ],
+        timestamp: "2025-08-28 16:20:00"
+    },
+    {
+        day: 62,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
+        ],
+        timestamp: "2025-08-29 16:20:00"
+    },
+    {
+        day: 63,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
+        ],
+        timestamp: "2025-08-30 16:20:00"
+    },
+    {
+        day: 64,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
+        ],
+        timestamp: "2025-08-31 16:20:00"
+    },
+    {
+        day: 65,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
+            "Calendar Integration Architecture: Implemented Google Calendar OAuth authentication with secure token management and real-time synchronization capabilities",
+            "Smart Scheduling System: Developed AI-powered event creation and management with automatic availability checking and conflict resolution",
+        ],
+        timestamp: "2025-09-0116:20:00"
+    },
+    {
+        day: 66,
+        content: [
+            "AI Chatbot Development & Calendar Integration",
             "API Integration & Data Flow",
             "Google Calendar API Integration: Connected OAuth flow with secure authentication and token refresh mechanisms",
             "Event Management System: Built create, read, and update functionality for calendar events with live status checking",
             "Data Persistence: Implemented conversation history storage and user preference management",
-            "User Experience & Interface",
             "Conversational Interface: Designed intuitive chat interface with natural language processing capabilities",
             "Calendar Visualization: Created user-friendly calendar views with real-time availability and event management",
             "Personalization Features: Implemented customizable AI behavior rules and user preference settings",
             "System Architecture & Performance",
-            "Scalable Backend: Built robust API endpoints for chatbot, calendar, and user management services",
-            "Real-time Synchronization: Implemented live calendar status updates and availability checking",
-            "Security Best Practices: Applied JWT authentication, secure token storage, and protected API endpoints"
         ],
         timestamp: "2025-09-1 18:30:00"
     }

@@ -24,6 +24,14 @@ dist-ssr
 *.sln
 *.sw?
 
-/backend/firebase.js
+# Environment variables
 .env
 .env.local
+.env.*.local
+
+# Firebase config (contains sensitive API keys)
+backend/firebase.js
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import AboutPage from './pages/AboutPage';
 import CardPage from "./pages/CardPage.jsx";
-import ChallengePage from "./pages/ChallengePage";
 import HomePage from './pages/HomePage';
 import InterviewPrepPage from './pages/InterviewPrepPage';
 import PracticePage from './pages/PracticePage';
@@ -11,6 +10,7 @@ import QuizzesPage from "./pages/QuizzesPage.jsx";
 import SubscribePage from "./pages/SubscribePage.jsx";
 import TutorialsPage from "./pages/TutorialsPage.jsx";
 import InterviewRecPage from "./pages/InterviewRecPage";
+import ProjectsPage from "./pages/ProjectsPage.jsx";
 
 const AppRoutes = () => {
     return (
@@ -25,7 +25,7 @@ const AppRoutes = () => {
                 <Route path="/tutorials" element={<TutorialsPage />} />
                 <Route path="/subscribe" element={<SubscribePage />} />
                 <Route path="/quizzes" element={<QuizzesPage />} />
-                <Route path="/challenge" element={<ChallengePage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/card" element={<CardPage />} />
                 <Route path="/recordings" element={<InterviewRecPage />} />
             </Routes>

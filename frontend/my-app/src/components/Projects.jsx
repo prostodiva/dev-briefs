@@ -1,5 +1,5 @@
+import { projectsOverview } from "../data/index.js";
 import { useEffect, useRef, useState } from "react";
-import { arrays, video, whiteBoard, debugging } from "../data/index";
 import { getYouTubeVideoId } from "../utils/youtube";
 
 const thumbnailQualities = [
@@ -9,15 +9,12 @@ const thumbnailQualities = [
     'default.jpg'
 ];
 
-const TutorialsCard = ({ title,  src }) => {
+const VideoCard = ({ title,  src }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [thumbIndex, setThumbIndex] = useState(0);
     const iframeRef = useRef(null);
-    
-    const videoId = getYouTubeVideoId(src);
 
-    // Debug log for src and videoId
-    console.log('TutorialsCard src:', src, 'videoId:', videoId);
+    const videoId = getYouTubeVideoId(src);
 
     const thumbnailUrl = videoId
         ? `https://img.youtube.com/vi/${videoId}/${thumbnailQualities[thumbIndex]}`
@@ -39,7 +36,7 @@ const TutorialsCard = ({ title,  src }) => {
 
     return (
         <div className="w-[400px] flex-shrink-0 p-4">
-            <div className="rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full">
+            <div className="bg-transparent rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="relative group cursor-pointer" style={{ height: 225 }}>
                     {src ? (
                         !isPlaying ? (
@@ -93,7 +90,7 @@ const TutorialsCard = ({ title,  src }) => {
     );
 };
 
-const Tutorials = () => {
+const Projects = () => {
     const scrollContainerRef = useRef(null);
 
     useEffect(() => {
@@ -112,58 +109,18 @@ const Tutorials = () => {
     }, []);
 
     return (
-        <section className="py-12">
+        <section className="py-12 bg-transparent">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-8 mt-16">Video Tutorials</h2>
+                <h2 className="text-3xl font-bold text-center mb-8 mt-16">Personal Projects Overview</h2>
 
-                <h2 className="text-xl font-light text-center">Arrays && Hashing</h2>
                 <div
                     ref={scrollContainerRef}
                     className="overflow-x-auto pb-4 scrollbar-hide"
                     style={{ scrollBehavior: 'smooth' }}
                 >
                     <div className="flex gap-6 px-4">
-                        {arrays.map((arrays) => (
-                            <TutorialsCard key={arrays.id} {...arrays} />
-                        ))}
-                    </div>
-                </div>
-
-                <h3 className="text-xl font-light text-center">Singly Linked List</h3>
-                <div 
-                    ref={scrollContainerRef}
-                    className="overflow-x-auto pb-4 scrollbar-hide"
-                    style={{ scrollBehavior: 'smooth' }}
-                >
-                    <div className="flex gap-6 px-4">
-                        {video.map((video) => (
-                            <TutorialsCard key={video.id} {...video} />
-                        ))}
-                    </div>
-                </div>
-
-                <h3 className="text-xl font-light text-center">Whiteboard Interview Practice</h3>
-                <div
-                    ref={scrollContainerRef}
-                    className="overflow-x-auto pb-4 scrollbar-hide"
-                    style={{ scrollBehavior: 'smooth' }}
-                >
-                    <div className="flex gap-6 px-4">
-                        {whiteBoard.map((whiteBoard) => (
-                            <TutorialsCard key={whiteBoard.id} {...whiteBoard} />
-                        ))}
-                    </div>
-                </div>
-
-                <h3 className="text-xl font-light text-center">Master C++ Debugging</h3>
-                <div
-                    ref={scrollContainerRef}
-                    className="overflow-x-auto pb-4 scrollbar-hide"
-                    style={{ scrollBehavior: 'smooth' }}
-                >
-                    <div className="flex gap-6 px-4">
-                        {debugging.map((debugging) => (
-                            <TutorialsCard key={debugging.id} {...debugging} />
+                        {projectsOverview.map((projectsOverview) => (
+                            <VideoCard key={projectsOverview.id} {...projectsOverview} />
                         ))}
                     </div>
                 </div>
@@ -172,4 +129,4 @@ const Tutorials = () => {
     );
 };
 
-export default Tutorials;
+export default Projects;

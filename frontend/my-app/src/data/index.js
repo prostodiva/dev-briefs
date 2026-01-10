@@ -1349,6 +1349,12 @@ export const debugging = [
             title: "Concatenate of Array",
             category: "Arrays",
             src: "https://www.youtube.com/embed/T6hg5B0CgBU"
+        },
+        {
+            id: 3,
+            title: "isAnagram",
+            category: "Arrays",
+            src: "https://www.youtube.com/embed/aaQpkOtSfb8"
         }
 ];
 

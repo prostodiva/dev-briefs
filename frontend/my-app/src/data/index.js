@@ -1340,9 +1340,15 @@ export const debugging = [
     export const arrays = [
         {
             id: 1,
-            title: "",
+            title: "Contains Dups",
             category: "Arrays",
             src: "https://www.youtube.com/embed/wsxSkQ4dDM0"
+        },
+        {
+            id: 2,
+            title: "Concatenate of Array",
+            category: "Arrays",
+            src: "https://www.youtube.com/embed/T6hg5B0CgBU"
         }
 ];
 

@@ -1,4 +1,3 @@
-import { title } from "motion/react-client";
 
 export const navLinks = [
     {

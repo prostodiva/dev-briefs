@@ -1,3 +1,4 @@
+import { title } from "motion/react-client";
 
 export const navLinks = [
     {
@@ -1341,20 +1342,26 @@ export const debugging = [
         {
             id: 1,
             title: "Contains Dups",
-            category: "Arrays",
+            category: "Arrays && Hashing",
             src: "https://www.youtube.com/embed/wsxSkQ4dDM0"
         },
         {
             id: 2,
             title: "Concatenate of Array",
-            category: "Arrays",
+            category: "Arrays && Hashing",
             src: "https://www.youtube.com/embed/T6hg5B0CgBU"
         },
         {
             id: 3,
             title: "isAnagram",
-            category: "Arrays",
+            category: "Arrays && Hashing",
             src: "https://www.youtube.com/embed/aaQpkOtSfb8"
+        },
+        {
+            id: 4,
+            title: "Group Anagram",
+            category: "Arrays && Hashing",
+            src: "https://www.youtube.com/embed/Fx-8RmEjxEc?si=PVFMF-uXqmDSrvIg"
         }
 ];
 
